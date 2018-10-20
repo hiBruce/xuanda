@@ -1,0 +1,39 @@
+ <div class="my-notes e-box notice_content_wrap pd20">
+            <!-- <div class="content_header"> -->
+                <!-- <ul class="tab_list">
+                    <li class="fl" :class="{'active':tabNum==1}" @click="loadGgList(1)"><span>课程公告</span></li> -->
+                    <!-- <li class="fl" :class="{'active':tabNum==2}" @click="loadGgList(2)"><span>班级公告</span></li> -->
+                <!-- </ul>
+            </div >-->
+            <div class="nav-right-content notice_content">
+
+               <!--  <div class="class_common_header" v-if="tabNum==2" v-cloak>
+                    <select name="" v-model="bjId" class="common_select fl" @change="getGgList()">
+                        <option value="">全部班级</option>
+                        <option :value="srcbj.id" v-for="srcbj in bjList" v-text="srcbj.mc"></option>
+                    </select>
+                    <button class="btn search_btn">查询</button>
+                    <button class="btn create_btn" @click="showModal('2')">创建班级公告</button>
+                </div>
+ -->
+                <ul class="notice_list" v-if="ggList.length>0" v-cloak>
+                    <li class="notice_li" v-for="(src,ind) in ggList">
+                        <h4>
+                            <span class="text limittext fl">{%src.bt%}</span>
+                            <span v-if="ggLx==1" class="fl">  发布时间：{%src.cjsj | dateMinute%}</span>
+                            <!--<span v-if="ggLx==2"> 班级：{%src.bjMc%} 发布时间：{%src.cjsj | dateMinute%}</span>-->
+                            <i class="fix"></i>
+                        </h4>
+                        <p v-text="src.nr">
+
+                        </p>
+                    </li>
+                </ul>
+                <ul v-else>
+                     <div class="nodata-warp">
+                           <p>暂无公告</p>
+                   </div>
+                </ul>
+                <div class="hot-group-page"></div>
+            </div>
+        </div>

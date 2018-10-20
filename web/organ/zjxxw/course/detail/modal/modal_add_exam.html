@@ -1,0 +1,55 @@
+<!--视频选择-->
+<div class="add_exam">
+    <div class="modal_content">
+        <div class="chapter_name">
+            <span>测试名称：</span>
+            <input type="text" class="chapter_name_input" placeholder="请输入测试名称" v-model="options.thisChapter.contentName">
+        </div>
+        <div class="chapter_info">
+            <div class="fl info_wrap">
+                <span>测试日期：</span>
+                <input class="time_input" type="date" v-model="options.thisChapter.testStartDate"> -- <input class="time_input" type="date" v-model="options.thisChapter.testEndDate">
+            </div>
+            <div class="fr info_wrap right_info">
+                <span>测试时长：</span>
+                <input type="number" class="exam_lenth" v-model="options.thisChapter.testDuration" placeholder="请输入测试时长（分钟），0为不限制">
+            </div>
+            <i class="fix"></i>
+        </div>
+
+        <div class="input_wrap">
+            <input type="text" placeholder="请输入试卷名称" v-model="searchOptions.mc">
+            <i class="iconfont">&#xe600;</i>
+        </div>
+
+
+        <button class="btn search_btn" @click="examList()">查询</button>
+
+        <div class="fr info_wrap right_info">
+            <span>设置通过分：</span>
+            <input type="number" class="exam_lenth" v-model="options.thisChapter.passScore">
+        </div>
+
+        <ul class="content_list">
+            <li class="title row">
+                <span class="col-lg-3 fl"></span>
+                <span class="col-lg-3 fl">试卷名称</span>
+                <span class="col-lg-2 fl">试题数</span>
+                <span class="col-lg-2 fl">总分值</span>
+            </li>
+            <li class="row" v-for="sj in sjRow">
+                <span class="col-lg-3 fl">
+                    <input type="radio" name="sjRadio" v-model="selSjid" :value="sj.id"  @click="selSj(sj)"/>
+                </span>
+                <span class="col-lg-3 fl" v-html="sj.mc"></span>
+                <span class="col-lg-2 fl" v-text="sj.tmnum"></span>
+                <span class="col-lg-2 fl" v-text="sj.zfz"></span>
+            </li>
+        </ul>
+        <div class="select_video_page"></div>
+        <div class="btn_wrap">
+            <button class="btn cancel_btn" @click="closeModal()">取消</button>
+            <button class="btn confirm_btn" @click="submitChapter()">确定</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div v-cloak class="kcpj">
+    <template v-if="reviewCon">
+        <div class="halfstar" id="halfstar"></div>
+        <div class="userText">
+            <!--v-model="courseComment.content"-->
+             <textarea placeholder="请输入评论内容" name="content" id="content"
+                       v-lano-limit="{text:'courseComment.content',maxLen:500,showNumId:'showLen'}"
+                       v-model="courseComment.content"></textarea>
+            <p class="showTextlen"><i id="showLen">0</i>/500</p>
+        </div>
+        <button class="fr" @click="submitContent">评论</button>
+    </template>
+    <ul class="evaluateed" v-if="courseComments && courseComments.length > 0 " v-cloak>
+        <li v-for="row in courseComments">
+            <img class="fl" src="/static/images/default_avator.png" alt="">
+            <div class="fl">
+                <h3>******<span>{{ row.createDate | date }}</span></h3>
+                <div class="halfstar1" :id="row.id"></div>
+                <div class="content break_word"  v-text="row.content">
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ul class="evaluateed" v-else>
+        <div class="nodata-warp">
+            <p>暂无数据</p>
+        </div>
+    </ul>
+    <div class="comment-page">
+    </div>
+</div>

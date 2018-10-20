@@ -1,0 +1,129 @@
+<div class="outline_wrap">
+    <p class="progresser">
+        上次学习：
+        <template v-if="learningStatus.xxzks">
+            <a :href="'/ucenter/course/learning/'+course.id+'?chapterId='+learningStatus.xxzks.id" v-text="learningStatus.xxzks.contentName"></a>
+            <a :href="'/ucenter/course/learning/'+course.id+'?chapterId='+learningStatus.xxzks.id" class="btn ml10">继续学习</a>
+        </template>
+        <template v-else>
+           暂未学习本课程
+        </template>
+    </p>
+    <ul class="outline_list" style="padding-right:20px;">
+        <li class="chapter_li" v-for="(row,ind) in rows_chapter" :id="row.id">
+            <h5 class="chapter_title menu_li" v-if="course.templateType != '2'">
+                <i class="iconfont fl mr10">
+                    &#xe67d;
+                </i>
+                <span v-text="row.name" class="limittext text_span fl"></span>
+                <div class="fr control_btn" v-if="course.publishStatus == 0">
+                </div>
+                <i class="fix"></i>
+            </h5>
+            <ul class="child_outline_list third_menu" v-if="course.templateType == '0' && row.children.length>0">
+                <li class="menu_li" v-for="child in row.children">
+                    <p class="menu_p">
+                        <i class="iconfont fl mr10">&#xe67d;</i>
+                        <span v-text="child.name" class="limittext text_span fl"></span>
+                        <i class="fix"></i>
+                    </p>
+                    <ul class="third_menu">
+                        <li class="third_li" v-for="third in child.contentList" style="display:block" >
+                            <!--:title="third.type==3?'截止到'+getTime(third.workEndDate):third.type==4?getTime(third.testStartDate) +'开始-' + getTime(third.testEndDate)+'截止':''"-->
+                            <div>
+                                <i class="iconfont fl mr10">
+                                    <template v-if="third.type==1"> &#xe67d;</template>
+                                    <template v-else-if="third.type==2"> &#xe628;</template>
+                                    <template v-else-if="third.type==3">&#xe6b8;</template>
+                                    <template v-else-if="third.type==4">&#xe678;</template>
+                                    <template v-else-if="third.type == 5">&#xe739;</template>
+                                    <template v-else-if="third.type==6">&#xe644;</template>
+                                </i>
+                                <span v-text="third.contentName" class="limittext text_span fl"></span>
+                                <span class="fr">
+                                   <a href="javascript:void(0)" @click="goDetail(third)" :id="third.id"
+                                      class="noplay">
+                                        <span class="fr right-box" v-if="third.type == 2 ">学习</span>
+                                        <span class="fr right-box" v-if="third.type == 3 ">作业</span>
+                                        <span class="fr right-box" v-if="third.type == 4 ">测试</span>
+                                        <span class="fr right-box" v-if="third.type == 5 ">文本</span>
+                                        <span class="fr right-box" v-if="third.type == 6">练习</span>
+                                    </a>
+                                </span>
+                                <div class="fr outline-progress-wrap">
+                                    <div class="outline-progress"
+                                         :style="'width:'+(third.percent?third.percent:0)+'%'"></div>
+                                </div>
+                            </div>
+                            <i class="fix"></i>
+                        </li>
+                    </ul>
+                    <i class="fix"></i>
+                </li>
+            </ul>
+            <ul class="third_menu" v-else-if="course.templateType == '1'">
+                <li class="third_li" v-for="third in row.contentList" style="display:block" >
+                    <!--:title="third.type==3?'截止到'+getTime(third.workEndDate):third.type==4?getTime(third.testStartDate) +'开始-' + getTime(third.testEndDate)+'截止':''"-->
+                    <div>
+                        <i class="iconfont fl mr10">
+                            <template v-if="third.type==1"> &#xe67d;</template>
+                            <template v-else-if="third.type==2"> &#xe628;</template>
+                            <template v-else-if="third.type==3">&#xe6b8;</template>
+                            <template v-else-if="third.type==4">&#xe678;</template>
+                            <template v-else-if="third.type == 5">&#xe739;</template>
+                            <template v-else-if="third.type==6">&#xe644;</template>
+                        </i>
+                        <span v-text="third.contentName" class="limittext text_span fl"></span>
+                        <span class="fr">
+                           <a href="javascript:void(0)" @click="goDetail(third)" :id="third.id"
+                              class="noplay">
+                                <span class="fr right-box" v-if="third.type == 2 ">学习</span>
+                                <span class="fr right-box" v-if="third.type == 3 ">作业</span>
+                                <span class="fr right-box" v-if="third.type == 4 ">测试</span>
+                                <span class="fr right-box" v-if="third.type == 5 ">文本</span>
+                                <span class="fr right-box" v-if="third.type == 6">练习</span>
+                            </a>
+                        </span>
+                        <div class="fr outline-progress-wrap">
+                            <div class="outline-progress" :style="'width:'+(third.percent?third.percent:0)+'%'"></div>
+                        </div>
+                        <i class="fix"></i>
+                    </div>
+                     <i class="fix"></i>
+                </li>
+            </ul>
+            <ul class="third_menu" v-else-if="course.templateType == '2'">
+                <li class="third_li" v-for="third in row.contentList" style="display:block" >
+                    <!--:title="third.type==3?'截止到'+getTime(third.workEndDate):third.type==4?getTime(third.testStartDate) +'开始-' + getTime(third.testEndDate)+'截止':''"-->
+                    <div>
+                        <i class="iconfont fl mr10">
+                            <template v-if="third.type==1"> &#xe67d;</template>
+                            <template v-else-if="third.type==2"> &#xe628;</template>
+                            <template v-else-if="third.type==3">&#xe6b8;</template>
+                            <template v-else-if="third.type==4">&#xe678;</template>
+                            <template v-else-if="third.type == 5">&#xe739;</template>
+                            <template v-else-if="third.type==6">&#xe644;</template>
+                        </i>
+                        <span v-text="third.contentName" class="limittext text_span fl"></span>
+                        <span class="fr">
+                            <a href="javascript:void(0)" @click="goDetail(third)" :id="third.id"
+                                   class="noplay">
+                                <span class="fr right-box" v-if="third.type == 2 ">学习</span>
+                                <span class="fr right-box" v-if="third.type == 3 ">作业</span>
+                                <span class="fr right-box" v-if="third.type == 4 ">测试</span>
+                                <span class="fr right-box" v-if="third.type == 5 ">文本</span>
+                                <span class="fr right-box" v-if="third.type == 6">练习</span>
+                            </a>
+                        </span>
+                        <div class="fr outline-progress-wrap">
+                            <div class="outline-progress" :style="'width:'+(third.percent?third.percent:0)+'%'"></div>
+                        </div>
+                        <i class="fix"></i>
+                    </div>
+                    <i class="fix"></i>
+                </li>
+            </ul>
+            <i class="fix"></i>
+        </li>
+    </ul>
+</div>

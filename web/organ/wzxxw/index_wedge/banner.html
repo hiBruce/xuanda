@@ -1,0 +1,15 @@
+<div class="banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" :style="'background:#'+img.remarks" v-for="img in loopImg" v-cloak>
+                <a :href="img.linkUrl" target="_blank">
+                    <div class=" loop-img" v-if="loopImg.length>0">
+                        <img :src="img.path" class="swiper-lazy" style="cursor:pointer"/>
+                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>

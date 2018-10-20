@@ -1,0 +1,1187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="Cache-Control" content="no-transform " />
+    <meta name="mobile-agent" content="format=xhtml;url=http://mylc.yutongzyc.com/">
+    <link href="http://ylc.yutongzyc.com/res/template/ylc/resource/css/index.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="http://ylc.yutongzyc.com/res/template/ylc/resource/css/global.css" type="text/css" rel="stylesheet" media="all" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://swc.yutongzyc.com/res/template/swc/resource/js/validate.js"></script>
+    <script type="text/javascript" src="http://swc.yutongzyc.com/res/template/swc/resource/js/area.js"></script>
+    <script src="http://swc.yutongzyc.com/res/template/swc/resource/js/layer/layer.min.js"></script>
+
+
+    <style type="text/css">
+        /**产品详情页-相关车型*/
+        .del_hei50 span{ font-size:12px; color:#999; margin-left:8px;}
+        .dybj_ul li{ width:230px; height:165px; line-height:25px; text-align:center; float:left; margin-bottom:10px; margin-left:19px;}
+        .dybj_ul li img{ margin-bottom:5px;}
+        .botm{min-height:260px; _height:260px; }
+        .picScroll-left .bd ul li .over .textd{ overflow:hidden;}
+
+    </style>
+    <script type="text/javascript" src="http://ylc.yutongzyc.com/res/template/ylc/resource/js/index.js"></script>
+    <script type="text/javascript" src="http://ylc.yutongzyc.com/res/template/ylc/resource/js/jquery.pack.js"></script>
+    <script type="text/javascript" src="http://ylc.yutongzyc.com/res/template/ylc/resource/js/jquery.SuperSlide.js"></script>
+    <script language="javascript" type="text/javascript" src="http://ylc.yutongzyc.com/res/template/ylc/resource/js/tipBox.js"></script>
+    <script language="javascript" type="text/javascript" src="http://ylc.yutongzyc.com/res/template/ylc/resource/js/util.js"></script>
+
+
+    <title>12米体检车-宇通医疗车-体检系列</title>
+    <meta name="description" content="12米体检车，大空间，新造型。"/>
+    <meta name="keywords" content="12米-ZK5180XYL6" />
+
+    <script type="text/javascript" src="http://ylc.yutongzyc.com/res/template/ylc/resource/front.js"></script>
+    <style type="text/css">
+        /*---------------2014- 9 -12新增--------------------*/
+
+        .detail_show{ border-top:4px solid #23aae4; width:100%; }
+        .detail_show h1{ height:88px; font-family:Arial; font-size:40px; color:#464646; line-height:88px; padding-left:24px; }
+        .detail_show h1 span{ font-size:22px; color:#959595; font-weight:normal; font-family:"微软雅黑"; margin-left: 24px; vertical-align:top; *vertical-align:middle; }
+
+        .detail_pics{ position:relative; }
+        .detail_pics p{ font-family:"新宋体"; text-align:center; line-height:39px; border-bottom:1px solid #d7d7d7; }
+        .d_p_wrap{ width:830px; overflow:hidden; text-align:center; }
+        .d_p_wrap img{ width:830px; height:529px; display:block; }
+
+        .d_p_list{ width:790px; position:relative; margin:0 auto; margin-top:15px; }
+        .d_p_list_wrap{ position:relative; overflow:hidden; width:760px; height:64px; margin:0 auto; }
+        .d_p_list_wrap ul{ position:absolute; width:760px; }
+        .d_p_list_wrap li{ float:left; margin-right:10px; cursor:pointer; width:100px; height:64px; }
+        .d_p_list_wrap li.active{ width:92px; height:56px; border:4px solid #009ed8; overflow:hidden; }
+        .d_p_list_wrap li img{  width:100px; height:64px;  }
+        .d_p_list_wrap li.active img{ margin:-7px; }
+
+        .d_p_list_l, .d_p_list_r{ }
+        .d_p_list_l{ background: url(http://swc.yutongzyc.com/res/template/swc/resource/images/pre_btn.png) no-repeat; position:absolute; display:block; width:13px; height:20px; top:50%; margin-top:-7px;  left:-10px; background-position:0 0; }
+        .d_p_list_r{ background: url(http://swc.yutongzyc.com/res/template/swc/resource/images/next_btn.png) no-repeat; position:absolute; display:block; width:13px; height:20px; top:50%; margin-top:-7px;  right:-10px;  }
+
+
+        .preimg{ cursor:url(http://imgwww.yutong.com/template/yutong/resource/images/cursor_left.cur),auto; }
+        .nextimg{ cursor:url(http://imgwww.yutong.com/template/yutong/resource/images/cursor_right.cur),auto; }
+    </style>
+    <script type="text/javascript">
+        <!--
+        $(function (){
+
+
+
+            picsShow();
+
+            $(".d_p_list_wrap").find("li").eq(0).click();
+            function picsShow(){
+
+                var aLi = $(".d_p_list_wrap").find("li");
+                var oUl = $(".d_p_list_wrap").children("ul");
+                var iNow = 0;
+                var iNow2 = 0;
+                var x = 0;
+
+                oUl.width(aLi.length*aLi.outerWidth(true));
+                aLi.click(function (){
+
+                    iNow2 = aLi.index(this);
+                    $(".d_p_wrap").children("img").attr("src", $(this).children("img").attr("titlePic"));
+                    $(this).addClass("active").siblings().removeClass("active");
+                });
+                $(".d_p_list_l").click(function (){
+                    //alert(iNow);
+                    if(iNow==0){
+                        if(aLi.length>8){
+                            iNow=aLi.length-7;
+                            oUl.stop(true, true).animate({"left": -(iNow-1)*aLi.outerWidth(true)+"px"});
+                        }
+
+                    }
+                    else{
+                        oUl.stop(true, true).animate({"left": -(iNow-1)*aLi.outerWidth(true)+"px"});
+                        iNow--;
+                    }
+                });
+                $(".d_p_list_r").click(function (){
+                    //alert(iNow);
+                    if(iNow==aLi.length-7||aLi.length<8){
+                        iNow=0;
+                        if(aLi.length>8){
+                            oUl.stop(true, true).animate({"left": -(iNow+1)*aLi.outerWidth(true)+"px"});
+                        }
+                    }
+                    else{
+                        oUl.stop(true, true).animate({"left": -(iNow+1)*aLi.outerWidth(true)+"px"});
+                        iNow++;
+                    }
+                });
+                $(".d_p_wrap").bind("mousemove mouseenter", function (e){
+
+                    x = e.clientX-$(this).offset().left;
+                    if(x>410){
+
+                        $(this).addClass("nextimg").removeClass("preimg");
+                    }
+                    else{
+
+                        $(this).addClass("preimg").removeClass("nextimg");
+                    }
+                });
+                $(".d_p_wrap").click(function (e){
+
+                    x = e.clientX-$(this).offset().left;
+                    if(x>410){
+
+                        if(iNow2==aLi.length-1){
+                            iNow2=0;
+                            iNow=0;
+                            oUl.stop(true, true).animate({"left": "0px"});
+                        }
+                        else{
+                            iNow2++;
+                            if(iNow2>6){
+                                $(".d_p_list_r").trigger("click");
+                            }
+                        }
+                        //$(".d_p_wrap").children("img").attr("src", aLi.eq(iNow2).children("img").attr("titlePic"));
+                    }
+                    else{
+
+                        if(iNow2==0){
+                            iNow=aLi.length-7;
+                            iNow2=aLi.length-1;
+                            if(aLi.length>8){
+                                iNow=aLi.length-7;
+                                oUl.stop(true, true).animate({"left": -(7)*aLi.outerWidth(true)+"px"});
+                            }
+                            //$(".d_p_wrap").children("img").attr("src", aLi.eq(aLi.length-1).children("img").attr("titlePic"));
+                            //alert(aLi.outerWidth(true));
+                        }
+                        else{
+                            iNow2--;
+                            //alert(iNow2+";"+(aLi.length-7));
+                            //$(".d_p_wrap").children("img").attr("src", aLi.eq(iNow2).children("img").attr("titlePic"));
+
+                            if(iNow2<aLi.length-7){
+
+                                $(".d_p_list_l").trigger("click");
+                            }
+                        }
+                    }
+                    aLi.eq(iNow2).addClass("active").siblings().removeClass("active");
+                    aLi.eq(iNow2).click();
+                });
+            }
+
+        });
+        //-->
+    </script>
+</head>
+<body>
+<div class="sideFix yahei">
+    <div id="sideFix">
+        <ul>
+            <li><a href='#productOrder'  ><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/pc_pic1.png" height="24" width="32" /><p>在线订购</p></a></li>
+            <li><a href="http://ytkf.yutong.com:8880/live800/chatClient/chatbox.jsp?companyID=8973&configID=15&skillId=5&enterurl=http://www.yutongzyc.com&pagereferrer=http://www.yutongzyc.com&k=1" target="_blank"><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/pc_pic2.png" height="24" width="32" /><p>在线咨询</p></a></li>
+            <li><a href="/lxwm/?ly" target="_blank"><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/pc_pic3.png" height="24" width="32" /><p>在线留言</p></a></li>
+            <li><a href="javascript:tip_flash.show();" ><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/pc_pic4.png" height="24" width="32" /><p>我需要定制</p></a></li>
+            <li class="shard"><a   href="javascript:void();"  ><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/pc_pic5.png" height="24" width="32"/><p>分享到</p></a>
+                <div class="share_box" style="display:none;">
+
+                    <div class="foot_r" style="padding-top:12px;">
+                        <!-- Baidu Button BEGIN -->
+                        <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+                            <a href="javascript:" title="分享到新浪微博" class="bds_tsina"></a>
+                            <a href="javascript:" title="分享到腾讯微博" class="bds_tqq"></a>
+                            <a href="javascript:" title="分享到豆瓣网" class="bds_douban"></a>
+                            <a href="javascript:" title="分享到人人网" class="bds_renren"></a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
+                </div>
+            </li>
+            <li><a href="javascript:" target="_blank"><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/pc_pic6.png" height="24" width="32" /></a><p style="color:#F00;font-weight:bold;">24小时热线</p> <p><font style="size:11px;font-weight:bold;color:#F00;">0757-83353102/18924841559</font></p></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function(e) {
+        b();
+        $('#sideFix').click(function(){
+            //alert();
+            //$(document).scrollTop(0);
+        })
+    });
+    function b(){
+        h = $(window).height();
+        t = $(document).scrollTop();
+        //if(t > 150){
+        $('#sideFix').show();
+        //}else{
+        //	$('#sideFix').hide();
+        //}
+    }
+    $(document).ready(function(e) {
+        b();
+        $('#sideFix').click(function(){
+            //alert();
+            //$(document).scrollTop(0);
+        })
+    });
+
+    $(window).scroll(function(e){
+        b();
+    })
+    $(function(){
+        $(".shard").hover(function (){
+            $(".shard a").addClass("hover")
+            $(".share_box").show();
+        }, function (){
+            $(".share_box").hide();
+            $(".shard a").removeClass("hover");
+
+        });
+    });
+
+
+</script>
+
+<script type="text/javascript" src="http://res.yutongzyc.com/public.js"></script>  <div class="top">
+    <div class="logo_pic fl"><a href="/"><img src="http://ylc.yutongzyc.com/res/template/ylc/resource/images/logo.jpg" height="43" width="221"/></a></div>
+    <div class="fr">
+        <a href="http://www.yutongzyc.com/" class="fr">专用车首页</a>
+        <div class="clear"></div>
+        <table class="tab_box fr">
+            <tr>
+                <td><img src="http://ylc.yutongzyc.com/res/template/ylc/resource/images/phone_icon.png" height="24" width="22" /></td>
+                <td style="color:#F00;font-weight:bold;font-size:20px;padding-right:12px;">0757-83353102/18924841559</td>
+                <td style="padding-top:6px; padding-left:14px;"><a href="http://ytkf.yutong.com:8880/live800/chatClient/chatbox.jsp?companyID=8973&configID=15&skillId=5&enterurl=http://www.yutongzyc.com&pagereferrer=http://www.yutongzyc.com&k=1" target="_blank"><img src="http://ylc.yutongzyc.com/res/template/ylc/resource/images/pl_icon.jpg" height="32" width="32" /></a> </td>
+                <td style="padding-right:0px;"><a target="_blank"  href="http://ytkf.yutong.com:8880/live800/chatClient/chatbox.jsp?companyID=8973&configID=15&skillId=5&enterurl=http://www.yutongzyc.com&pagereferrer=http://www.yutongzyc.com&k=1" target="_blank" style="font-size:18px;">在线客服</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="clear"></div>
+</div><!-----.top------->  <div class="nav">
+    <div class="wrap">
+        <ul id="navChannel">
+            <!--begin -->
+            <li class="active" id="productNav"><a href="/" class="swc_lj">宇通医疗车</a>
+                <div id="swc_list">
+                    <div class="city_btn"><a href="/ytylc/tjc/">体检系列</a></div>
+                    <div class="city_btn"><a href="/ytylc/cxc/">采送血系列</a></div>
+                    <div class="city_btn"><a href="/ytylc/jhc/">急救系列</a></div>
+                    <div class="city_btn"><a href="/ytylc/zkylc/">专科医疗车</a></div>
+                    <div class="city_btn"><a href="/ytylc/fzc/">福祉车</a></div>
+                </div>
+
+            </li>
+            <!--end -->
+
+            <li><a id="nav773"  href="/cpys/"   class="swc_lj" >产品优势</a></li>
+            <li><a id="nav782"  href="/ylczx/"   class="swc_lj" >医疗车资讯</a></li>
+            <li><a id="nav774"  href="/shfw/fwcn/"   class="swc_lj" >售后服务</a></li>
+            <li><a id="nav779"  href="/gmlc/"   class="swc_lj" >购买流程</a></li>
+            <li><a id="nav780"  href="/lxwm/"   class="swc_lj" >关于我们</a></li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+</div>
+
+<!-----.nav------->
+
+<div class="wrap">
+    <div class="pos_tit">当前位置：<a  href='../'>宇通医疗车</a> > 12米体检车</div><!--cpys_pad-->
+
+    <div class="del_hei50">12米 12米体检车  <span>信息化体检车</span></div>
+    <div class="wid140px fl">
+        <div class="del_pad">
+            <!--  体检车车  -->
+            <p><span>总长*总宽（mm）：</span>12000*2550</p>
+            <p><span>总高（mm）：</span>3600/3700</p>
+            <p><span>车门及门泵：</span></p>
+
+
+        </div>
+        <table width="140">
+
+            <tr>
+                <td width="44" style="text-align:right;"><a href="#order" ><img src="http://ylc.yutongzyc.com/res/template/ylc/resource/images/gw_icon.png" height="18" width="20" /></a></td>
+                <td width="84"><a   href="#order" >在线订购</a></td>
+            </tr>
+            <tr>
+                <td style="text-align:right;"><a href="http://ytkf.yutong.com:8880/live800/chatClient/chatbox.jsp?companyID=8973&configID=15&skillId=5&enterurl=http://www.yutongzyc.com"><img src="http://ylc.yutongzyc.com/res/template/ylc/resource/images/zx_icon.png" height="16" width="16" /></a></td>
+                <td><a href="http://ytkf.yutong.com:8880/live800/chatClient/chatbox.jsp?companyID=8973&configID=15&skillId=5&enterurl=http://www.yutongzyc.com" target=_blank >在线咨询</a></td>
+            </tr>
+            <tr>
+                <td style="text-align:right;"><a href="javascript:void(0);" onclick="tip_flash.show();"><img src="http://ylc.yutongzyc.com/res/template/ylc/resource/images/dz_icon.png" height="16" width="16" /></a></td>
+                <td><a href="javascript:void(0);" onclick="tip_flash.show();">我要定制</a></td>
+            </tr>
+
+        </table>
+    </div><!-----.wid140px------->
+    <!-- 滚动图 begin-->
+    <div class="wid830px fr">
+        <div class="detail_pics">
+            <div class="d_p_wrap preimg">
+
+                <img src="http://ylc.yutongzyc.com/res/upload/product/product/20150714/2015GNOhTJ0AL0.jpg"   title="12米体检车">								</div>
+            <div class="d_p_list">
+                <a href="javascript:;" class="d_p_list_l"></a>
+                <a href="javascript:;" class="d_p_list_r"></a>
+                <div class="d_p_list_wrap">
+                    <ul style="width: 318px;">
+                        <li class=""> <img  src="http://ylc.yutongzyc.com/res/upload/product/product/20150714/2015GNOhTJ0AL0_100X100.jpg" titlepic="http://ylc.yutongzyc.com/res/upload/product/product/20150714/2015GNOhTJ0AL0.jpg"   title="12米体检车"> </li><li class=""> <img  src="http://ylc.yutongzyc.com/res/upload/product/product/20150714/2015GNOhVTgf0J_100X100.jpg" titlepic="http://ylc.yutongzyc.com/res/upload/product/product/20150714/2015GNOhVTgf0J.jpg"   title="12米体检车"> </li><li class=""> <img  src="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTtqoyBg_100X100.jpg" titlepic="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTtqoyBg.jpg"   title="12米体检车"> </li><li class=""> <img  src="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTuCPO2u_100X100.jpg" titlepic="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTuCPO2u.jpg"   title="12米体检车"> </li><li class=""> <img  src="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTvHOOwv_100X100.jpg" titlepic="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTvHOOwv.jpg"   title="12米体检车"> </li><li class=""> <img  src="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTwesdBT_100X100.jpg" titlepic="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTwesdBT.jpg"   title="12米体检车"> </li><li class=""> <img  src="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTwbi6Yb_100X100.jpg" titlepic="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GROTwbi6Yb.jpg"   title="12米体检车"> </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div><!-----.wid810px------->
+    <div class="clear"></div>
+    <!-- 滚动图 end-->
+
+    <div class="nav_hei40pxed">
+        <table width="100%">
+            <tr>
+                <td><a href="javascript:" id="one1" class="hover" onclick="setTab('one',1,4)">产品特点</a></td>
+                <td><a href="javascript:" id="one2"  onclick="setTab('one',2,4)">配置参数</a></td>
+                <td><a href="javascript:" id="one3"  onclick="setTab('one',3,4)">客户案例</a></td>
+                <td><a href="javascript:" id="one4"  onclick="setTab('one',4,4)">客户服务</a></td>
+
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="con_one_1">
+        <p>
+            ﻿
+            <style type="text/css">
+                *{margin:0;padding:0;border:none;list-style: none;font-family: "微软雅黑";}
+                .w980{width: 980px;margin: 0 auto;}
+                .w980 img{display: block;margin: 0 auto;}
+                .w980 h3{font-size: 18px;color: #004e9d;padding:14px 0 8px 0;}
+                .w980 h4{font-size: 16px;color: #6b6b6b;padding:16px 0 5px 0;}
+                .w980 p{font-size: 14px;color: #585858;line-height: 24px;padding:2px 0;}
+                .w980 .fr{float: right;}
+                .w980 .fl{float: left;}
+                .w980 .tit{height: auto;overflow: hidden;}
+                .w980 .tit img{margin-bottom: 20px;}
+                .w980 .tit p{text-indent:28px;margin: 6px 0;}
+                .w980 .invent{height: auto;overflow: hidden;}
+                .w980 .invent .pro{padding: 10px 0;height: auto;clear: both;}
+                .w980 .invent .cont {height: auto;overflow: hidden;padding: 10px 0;}
+                .w980 .invent .cont img{border-radius: 6px;}
+                .w980 .invent .cont img.fl{margin-right:38px;}
+                .w980 .invent .cont img.fr{margin-left:38px;}	</style>
+        </p>
+        <div class="w980">
+            <div class="tit">
+                <img src="http://ylc.yutongzyc.com/res/upload/importimg/2018GeP73AMUua/images/tit.jpg"  alt=12米体检车 title=12米体检车>
+                <p>
+                    宇通体检车，秉承精湛的客车制造工艺，利用科技创新优势，将现代健康体检理念融汇于整车研发过程，针对客户需求设计个性化的解决方案。体检车可用于现场体检、简易治疗，是一个移动体检中心或流动诊所。体检车内部设置登记区、体检区、休息区，布局合理，最大化提高体检效率；根据需要配置X光机、彩超和心电等专用设备，全面满足健康体检和职业病检查。目前，宇通体检车涵盖5.9-12米长度段，包括健康体检车、职业体检车、中医诊疗车及眼科车等多个种类。</p>
+            </div>
+            <tit>
+                <div class="invent">
+                    <div class="cont">
+                        <div class="pro">
+                            <img class="fl" src="http://ylc.yutongzyc.com/res/upload/importimg/2018GeP73AMUua/images/tijian1.jpg" style="margin-top: 18px"  alt=12米体检车 title=12米体检车>
+                            <div class="pro-cont">
+                                <h3>
+                                    1、一体化设计及全工序生产</h3>
+                                <h4>
+                                    一体化设计：</h4>
+                                <p>
+                                    遵循医疗车特点，综合匹配底盘、外饰、内饰、电器，从客户实际需求出发，不断提升车辆的专用功能；</p>
+                                <h4>
+                                    全工序生产：</h4>
+                                <p>
+                                    设计、制造、设备装配全程一体化，实现整车式制件、焊装、涂装、总装及特殊加工车间流水线作业，一次成型，避免二次改装对车辆的损害。</p>
+                            </div>
+                        </div>
+                        <div class="pro">
+                            <div class="pro-cont">
+                                <h3>
+                                    2、领先的车载中央冷暖变频空调</h3>
+                                <h4>
+                                    制冷效果好：</h4>
+                                <p>
+                                    相比传统方案，车辆顶部安装4个空调室内机，前、后各2个，风道送风，风速高，风距远，避免家用空调制冷不均的缺点；</p>
+                                <h4>
+                                    舒适性好：</h4>
+                                <p>
+                                    行、驻车共用一套风道和出风口，风量大小及朝向可自由调节；</p>
+                                <h4>
+                                    空间利用率高：</h4>
+                                <p>
+                                    无需单独安装空调内机，提升空间利用率，全车用一台空调外机，大大提高了行李舱空间。</p>
+                            </div>
+                        </div>
+                        <div class="pro">
+                            <div class="pro-cont">
+                                <img class="fl" src="http://ylc.yutongzyc.com/res/upload/importimg/2018GeP73AMUua/images/tijian3.jpg" style="margin-top: 18px; margin-bottom: 20px" width="350"  alt=12米体检车 title=12米体检车>
+                                <h3>
+                                    3、行业内独有的商务化环保内饰</h3>
+                                <h4>
+                                    商务内饰：</h4>
+                                <p>
+                                    模具化商务内饰，引领第三代医疗车发展趋势，打造温馨舒适的客户体验；</p>
+                                <h4>
+                                    绿色环保：</h4>
+                                <p>
+                                    车内环保达到3.5级（甲醛含量仅为行业标准的1/10），为医护人员提供安全、环保、无污染的绿色体检环境。</p>
+                            </div>
+                        </div>
+                        <div class="pro">
+                            <img class="fr" src="http://ylc.yutongzyc.com/res/upload/importimg/2018GeP73AMUua/images/tijian4.jpg" style="margin-top: 18px; margin-bottom: 10px"  alt=12米体检车 title=12米体检车>
+                            <div class="pro-cont">
+                                <h3>
+                                    4、行业内独有的DR双供电</h3>
+                                <p style="margin-top: 18px">
+                                    宇通实现DR市电220V和独立发电机双供电解决方案，采用超静音发电机，与车辆共用油箱，并实现远程控制，触摸式面板，仪表台一键操作。</p>
+                            </div>
+                        </div>
+                        <div class="pro">
+                            <div class="pro-cont">
+                                <img class="fl" src="http://ylc.yutongzyc.com/res/upload/importimg/2018GeP73AMUua/images/tijian6.jpg"  alt=12米体检车 title=12米体检车>
+                                <h3>
+                                    5、驻车独立供暖系统</h3>
+                                <h4>
+                                    使用方便：</h4>
+                                <p>
+                                    独立供暖在车辆停车熄火后，可单独工作；</p>
+                                <h4>
+                                    供暖效果好：</h4>
+                                <p>
+                                    燃油加热锅炉供暖采用水路循环制热系统，相比空调制热，车内湿度加大，空气不干燥，制热效果好，环境更舒适。</p>
+                            </div>
+                        </div>
+                        <div class="pro" style="clear: both">
+                            <div class="pro-cont">
+                                <h3>
+                                    6、体检信息管理系统</h3>
+                                <p style="margin-top: 16px">
+                                    体检车内配置有线局域网和4G无线网络，可实现B超、心电图、DR、纯音电测听等体检结果数据自动汇总，打印报告；与站内互联，信息传回站内；自动上传云平台，实现远程会诊。</p>
+                                <img src="http://ylc.yutongzyc.com/res/upload/importimg/2018GeP73AMUua/images/tijian5.jpg" style="margin-top: 20px"  alt=12米体检车 title=12米体检车></div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div><!-------产品特点-------->
+
+    <div id="con_one_2" style="display:none;">
+        <div class="tit_hei46px"><div class="tited">配置参数</div>
+            <div class="wid210px fr"><p class="colc00 fl"><a style="color:#F00; text-decoration:none;" href="javascript:void(0);" onclick="tip_flash.show();">不满足您的需求？ 请点击这里</a></p> <a href="javascript:void(0);" onclick="tip_flash.show();" class="fr"><img src="http://ylc.yutongzyc.com/res/template/ylc/resource/images/go_pic.jpg" height="10" width="5" /></a></div> <div class="clear"></div></div>
+        <table width="980" class="del_tab2">
+            <tr>
+                <td width="200">公告车型</td>
+                <td>ZK5180XYL4</td>
+            </tr>
+            <tr>
+                <td width="200">底盘公告</td>
+                <td>ZK6127CRD6</td>
+            </tr>
+            <tr>
+                <td width="200">发动机</td>
+                <td>YC6L330-58</td>
+            </tr>
+            <tr>
+                <td width="200">排量（L）</td>
+                <td>8.424</td>
+            </tr>
+            <tr>
+                <td width="200">最高车速（km/h）</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td width="200">额定载客人数</td>
+                <td>2~14</td>
+            </tr>
+            <tr>
+                <td width="200">总长*总宽（mm）</td>
+                <td>12000*2550</td>
+            </tr>
+            <tr>
+                <td width="200">总高（mm）</td>
+                <td>3600/3700</td>
+            </tr>
+            <tr>
+                <td width="200">轴距（mm）</td>
+                <td>6050</td>
+            </tr>
+            <tr>
+                <td width="200">底盘厂家</td>
+                <td>郑州宇通客车股份有限公司</td>
+            </tr>
+            <tr>
+                <td width="200">发动机位置</td>
+                <td>后置</td>
+            </tr>
+            <tr>
+                <td width="200">悬架系统</td>
+                <td>板簧结构</td>
+            </tr>
+            <tr>
+                <td width="200">轮胎</td>
+                <td>295/80R22.5</td>
+            </tr>
+        </table>
+    </div><!-------参数配置-------->
+
+    <div id="con_one_3" style="display:none;">
+        <div class="tit_hei46px"><div class="tited">客户案例</div></div>
+        <div class="wid620px fl">
+            <a href="../ylczx/2018/0120/2018BAOpIkiDuk.html"  target=_blank class="fl"><img src="http://ylc.yutongzyc.com/res/images/zycxw/20180123/2018AWKvzbtUNe.jpg" height="178" width="280"  /></a>
+            <div class="wid310px fr">
+                <div class="tit"><a href="../ylczx/2018/0120/2018BAOpIkiDuk.html"  target=_blank>无偿献血 温暖甬城—宇通锂电采血车服务宁波中心血站</a></div>
+                <p>近年来，随着国家政策不断扶持，中央和地方各级政府对医疗卫生服务体系建设投入力度加大，公共...</p>
+                <div class="ljxq"><a href="../ylczx/2018/0120/2018BAOpIkiDuk.html"   target=_blank>了解详情 >></a></div>
+            </div>
+            <div class="clear"></div>
+
+        </div><!-----.wid620px------->
+
+        <div class="wid320px fr">
+            <ul>
+                <li><span>></span> <a href="../ylczx/2017/1215/2018BAOpICwck3.html" target=_blank>落实民生实事——新密市、荥阳市卫计委体...</a></li>
+                <li><span>></span> <a href="../ylczx/2017/1207/2018BAOpIcxU6y.html" target=_blank>创建基层医疗新格局——登封市卫计委举行...</a></li>
+                <li><span>></span> <a href="../ylczx/2017/1101/2018BAOkxgDOT2.html" target=_blank>秋季医博会圆满闭幕 宇通医疗车表现抢眼</a></li>
+                <li><span>></span> <a href="../ylczx/2017/1029/2018BAOkxpj5aX.html" target=_blank>宇通医疗车亮相秋季医博会 现场观众疯狂...</a></li>
+            </ul>
+        </div><!-----.wid320px------->
+        <div class="clear"></div>
+    </div>
+
+
+    <div id="con_one_4" style="display:none;">
+        <div class="tit_hei46px"><div class="tited">客户服务</div></div>
+
+        <div class="d_support">
+            <h2>安心服务  给您有力支持</h2>
+            <p class="d_s_1">完善的体系，才有迅捷贴心的服务，宇通为您提供从售前、售中到售后的全方位贴心服务，更拥有领先行业的密集服务网络中，以小于90公里的服务半径，让服务响应更迅速，对您的支持更有力。</p>
+            <ul class="support_1">
+                <li>
+                    <img src="http://swc.yutongzyc.com/res/template/swc/resource/temp/s2.jpg">
+                    <h4>健全密集的服务网络</h4>
+                    <p>8家4S中心站，近700家特约服务网点，100多家配件中心库。</p>
+                </li>
+                <li>
+                    <img src="http://swc.yutongzyc.com/res/template/swc/resource/temp/s1.jpg">
+                    <h4>400全天候电话服务平台</h4>
+                    <p>宇通服务热线0757-83353102/18924841559，固定电话和手机均可24小时拨打，功能强大，服务高效迅捷。</p>
+                </li>
+            </ul>
+            <ul class="support_2">
+                <li>
+                    <img src="http://swc.yutongzyc.com/res/template/swc/resource/temp/s3.jpg">
+                    <h4>健全密集的服务网络</h4>
+                    <p>8家4S中心站，近700家特约服务网点，100多家配件中心库。</p>
+                </li>
+                <li>
+                    <img src="http://swc.yutongzyc.com/res/template/swc/resource/temp/s4.jpg">
+                    <h4>400全天候电话服务平台</h4>
+                    <p>宇通服务热线0757-83353102/18924841559，固定电话和手机均可24小时拨打，功能强大，服务高效迅捷。</p>
+                </li>
+                <li>
+                    <img src="http://swc.yutongzyc.com/res/template/swc/resource/temp/s5.jpg">
+                    <h4>400全天候电话服务平台</h4>
+                    <p>宇通服务热线0757-83353102/18924841559，固定电话和手机均可24小时拨打，功能强大，服务高效迅捷。</p>
+                </li>
+            </ul>
+        </div>
+    </div><!-----.con_one_5------->
+    <!-- 相关车型 begin -->
+    <div id="con_one_relation" style="display:block;">
+        <div class="tit_hei46px"><div class="tited">相关车型</div></div>
+        <ul class="dybj_ul">
+
+            <li style="margin-left:0px"><a href="../products/ZK5156XYL4-1.html" title='10.7米体检车' target='_blank'><img src="http://ylc.yutongzyc.com/res/upload/product/product/20180718/2018GRPZtbKGBh_300X200.jpg" height="145" width="230" /></a><p><a href="../products/ZK5156XYL4-1.html" title='10.7米体检车' target='_blank'>10.7米体检车</a></p></li>
+            <li ><a href="../products/ZK5156XYL5-1.html" title='10.7米牙科车' target='_blank'><img src="http://ylc.yutongzyc.com/res/upload/product/product/20180119/2018ASPQAgCPAY_300X200.jpg" height="145" width="230" /></a><p><a href="../products/ZK5156XYL5-1.html" title='10.7米牙科车' target='_blank'>10.7米牙科车</a></p></li>
+            <li ><a href="../products/ZK5160XYL15.html" title='11米体检车' target='_blank'><img src="http://ylc.yutongzyc.com/res/upload/product/product/20180427/2018DaQOxZTSUF_300X200.jpg" height="145" width="230" /></a><p><a href="../products/ZK5160XYL15.html" title='11米体检车' target='_blank'>11米体检车</a></p></li>
+            <li ><a href="../products/ZK5156XYL5-3.html" title='11米妇科检查车' target='_blank'><img src="http://ylc.yutongzyc.com/res/upload/product/product/20180131/2018AeP7G2aBCy_300X200.jpg" height="145" width="230" /></a><p><a href="../products/ZK5156XYL5-3.html" title='11米妇科检查车' target='_blank'>11米妇科检查车</a></p></li>
+
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <div class="clear"></div>
+
+    <!-- 相关车型 end -->
+
+    <a name="order"></a>
+    <form action=""  id="order">
+        <input type="hidden" name="areaId" value="" id="areaId"/><input type="hidden" name="siteId"  id="order_siteId_del" value="25" />
+        <input type="hidden" name="p2" value="0" id="p2"/>
+        <input type="hidden" name="productUnit" value="0"/>
+        <div class="tit_hei46px"><div class="tited">在线订购</div></div><a name="productOrder"></a>
+        <table width="650" class="cont_tab2 fl">
+            <tr>
+                <td colspan="4"><p>请留下您的定制需求，我们将在最短的时间内与您联系，如果您有紧急需求，请联系在线客服或者拨打<br/></p></td>
+            </tr>
+            <tr>
+                <td colspan="4"><span id="guesttip" style="color:red"></span></td>
+            </tr>
+            <tr>
+                <td width="78" style="text-align:right;"><span class="colfcc">*</span> 客户名称：</td>
+                <td width="207"><input id="userName" name="userName" maxlength="5" type="text" /></td>
+                <td width="133" style="text-align:right;"><span class="colfcc">*</span> 联系电话：</td>
+                <td width="212"><input  id="recMobile" name="recMobile"  maxlength="15" type="text" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:right;"> E-mail：</td>
+                <td><input name="email" id="email" type="text" /></td>
+                <td style="text-align:right;"> 产品型号：</td>
+                <td>
+                    <select  name="productId" id="productId" ></select>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;"> 主要用途：</td>
+                <td><input  name="p1"  id="p1"  type="text"  maxlength="15" /></td>
+                <td style="text-align:right;"> 上户地区：</td>
+                <td><input id="province1" type="text"  maxlength="15" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:right;"> 需求说明：</td>
+                <td colspan="3"><textarea  name="orderMemo"  id="orderMemo" cols="" rows=""></textarea></td>
+            </tr>
+
+            <tr>
+                <td height="80"></td>
+                <td colspan="3"><input name="" id="saveFormBtn" onclick="createOrder()" type="button" value="提交" class="btned" /> <input onclick="reseOrderForm()"  type="button" value="重置" class="btned" /></td>
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+            function reseOrderForm(){
+                document.getElementById('order').reset();
+                return;
+                //alert();
+                //$('#guestbookForm2').reset() ;
+                $("#userName").html('');
+                $('#recMobile').val("");
+                $('#orderMemo').val("");
+                $('#order').reset();
+
+
+
+            }
+            function createOrder(){
+                if(!checkOrderForm()) return;
+                $('#saveFormBtn').hide();
+                $("#guesttip").html('<font color=green>提交中，请稍等...<font>');
+
+
+                var url = '/thtml/salesOrder/create.do?r='+Math.random();
+
+                //alert();
+                // saveCookie();
+                //var areaId = $('#province').val()+'-'+$('#city').val();
+                var areaId = $('#province').val();
+                $('#areaId').val(areaId);
+                //$('#saveTr').hide();
+                //$('#suc').html('正在提交订单，请稍等...');
+
+
+                jQuery.post(url,$("#order").serialize(),function(data){
+                    //alert(data.done);
+                    if(!data.done){
+                        alert("订单提交失败，请稍候再试!");
+                        //$('#suc').html('<font color=red>订单提交失败，请稍候再试!</font>');
+                        //$('#saveTr').show();
+                        return false;
+                    }
+                    else{
+                        //alert("订单提交订单成功，感谢您的参与！");
+                        layer.alert('订单提交订单成功，感谢您的参与！', 9);
+                        reseOrderForm();
+
+                        $('#saveFormBtn').show();
+                        $("#guesttip").html('');
+                        //window.location.href='/products/ordersuccess/';
+                        return true;
+                    }
+                },"json");
+            }//end of function
+            function checkOrderForm(){
+                var obj;
+                //alert();
+                var name=$('#userName').val();
+                // alert(name);
+                if($.trim(name)=='' ){
+
+                    $("#guesttip").html('请输入您的姓名!');
+                    $('#userName').focus();
+                    return false;
+
+                }
+                $("#guesttip").html('');
+
+
+                // alert(name);
+                var phone=$('#recMobile').val();
+                //alert(phone);
+                if($.trim(phone)=='' ){
+                    //alert();
+                    $("#guesttip").html('请输入您的电话!');
+                    $('#recMobile').focus();
+                    return false;
+
+                }
+                $("#guesttip").html('');
+
+
+
+
+                var phone=$('#recMobile').val();
+                if($.trim(phone)!='' ){}
+                if(!phoneCheck($.trim(phone))&&!partten.test($.trim(phone))){
+
+                    $("#guesttip").html('请输入有效的固话或手机!');
+                    $('#recMobile').focus();
+                    return false;
+                }
+                $("#guesttip").html('');
+
+                /******/
+
+                var email=$('#email').val();
+                if($.trim(email)!='' ){
+                    if(!isValidEmail(email)){
+
+                        $("#guesttip").html('请输入有效的email!');
+                        $('#email').focus();
+                        return false;
+                    }
+                }
+
+                /*** **/
+                checkOrderMemo();
+                $("#guesttip").html('');
+                return true;
+            }
+
+            var partten = /^1[34578]\d{9}$/;
+            function phoneCheck(phone){
+                if(phone.match(/^[0]{1}[0-9]{2,3}-?[2-8]{1}[0-9]{6,7}$/g)) return true;
+                return false;
+            }
+
+            function isValidEmail(inEmail){
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (filter.test(inEmail)) return true;
+                else return false;
+            }
+
+
+            function checkOrderMemo(){
+                // alert();
+                var obj=document.getElementById("orderMemo");
+                var otherInfo=obj.value;
+                var maxLength=500;
+                if(obj.value.length>maxLength){
+                    obj.value=obj.value.substring(0,maxLength)+"...";
+                }
+            }//end of function
+        </script>
+    </form>
+
+    <div class="wid300px fr">
+        <p class="pro_tit2">联系方式：</p>
+        <table width="230">
+            <tr>
+                <td width="37"><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/zxpp_icon.jpg" height="19" width="21" /></td>
+                <td ><p><a taget=_blank href="http://ytkf.yutong.com:8880/live800/chatClient/chatbox.jsp?companyID=8973&configID=15&skillId=5&enterurl=http://www.yutongzyc.com&pagereferrer=http://www.yutongzyc.com&k=1">在线客服</a></p> </td>
+            </tr>
+            <tr>
+                <td><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/emile_icon.jpg" height="20" width="21" /></td>
+                <td><p>服务邮箱</p><p class="colfcced"><a href="mailto:ytzyckf@yutong.com">ytzyckf@yutong.com</a></p></td>
+            </tr>
+            <tr>
+                <td><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/dh_icon.jpg" height="23" width="21" /></td>
+                <td><p>服务电话</p><p class="colfcced" style="font-size:16px;">0757-83353102/18924841559</p></td>
+            </tr>
+        </table >
+    </div>
+    <script type="text/javascript">
+        $('#order_siteId').val('32');
+        function initProductSelect(){
+            var s="";
+            s+='<option  value="2017LPOfYN6AAs"    >ZK5033XJH35监护型救护车</option>';    s+='<option  value="2017GOO0ad72pF"    >12米妇科检查车</option>';    s+='<option  value="2017GOOilAHOm3"    >12米体质监测车</option>';    s+='<option  value="2018AeQBAVmNCw"    >11米妇科检查车</option>';    s+='<option  value="2017GOOals5zpH"    >9米牙科车</option>';    s+='<option  value="2018ASPTej3Xzx"    >10.7米牙科车</option>';    s+='<option  value="2018AFNOjAnnOR"    >流动医院</option>';    s+='<option  value="2018AFPmRVSGi2"    >ZK5033XJH35妇婴急救车</option>';    s+='<option  value="2018AFPxuMetIv"    >ZK5049XJH15妇婴救护车</option>';    s+='<option  value="2018AYOqUGmKjF"    >ZK5032XJH15运送型救护车</option>';    s+='<option  value="2018AYOYSf7f2U"    >ZK5030XXJ15送血车</option>';    s+='<option  value="2017FPRE36DEvS"    >ZK5039XJH35监护型救护车</option>';    s+='<option  value="2018ARPnBHtJph"    >ZK5030XFZ15福祉车</option>';    s+='<option  value="2018ASOUPXxyyU"    >7米采血车</option>';    s+='<option  value="2018BAPiwCTDEY"    >12米牙科车</option>';    s+='<option  value="2018AFNDUi2DyD"    >12米血液透析车</option>';    s+='<option  value="2018AeORoEoFBj"    >5.7米牙科车</option>';    s+='<option  value="2018AeQP2IGgfa"    >7.2米牙科车</option>';    s+='<option  value="2018BAPdRVee5R"    >7.2米中医诊疗车</option>';    s+='<option  value="2017GOOwKAdBB2"    >ZK5156XYL5眼科车</option>';    s+='<option  value="2018AFPqbngXte"    >ZK5039XJH35妇婴救护车</option>';    s+='<option  value="2018AEJqzDWABA"    >脑卒中急救车</option>';    s+='<option  value="2018AFPuTs6Qi5"    >ZK5041XJH5妇婴救护车</option>';    s+='<option  value="2014HHLcEyWXSq"    >11米采血车</option>';    s+='<option  value="2018GeKblNXkz5"    >ZK5043XJH15救护车</option>';    s+='<option  value="2017GMKiMgehpw"    >7米体检车</option>';    s+='<option  value="2018AeQz0UrbaV"    >6米体检车</option>';    s+='<option  value="2017FVQpxceCah"    >9米体检车</option>';    s+='<option  value="2014HHOnBM5R5U"    >8米体检车</option>';    s+='<option  value="2014HHOriKI4BL"    >10.7米体检车</option>';    s+='<option  value="2014HHO4T3vo6f"    selected="selected"  >12米体检车</option>';    s+='<option  value="2018DaQTRqcP4q"    >11米体检车</option>';    s+='<option  value="2018GGNjOtezTM"    >6米健康普查车</option>';    s+='<option  value="2017GOOnZJCuYn"    >6米宠物医疗车</option>';    s+='<option  value="2018AeRotGAlB5"    >6米健康普查车</option>';    s+='<option  value="2018AYPUH26tU2"    >6米健康普查车</option>';    s+='<option  value="2014HHOflAEnDJ"    >ZK5041XJH5监护型救护车</option>';    s+='<option  value="2018GTQiPkEzW4"    >ZK5049XJH15监护救护车</option>';    s+='<option  value="2018GZRcIagbHh"    >6米采血车</option>';    s+='<option  value="2017GMKxk3yvRR"    >6米采血车</option>';    s+='<option  value="2014HHLWXLtdlo"    >9米采血车</option>';    s+='<option  value="2017GMPjWqd4AM"    >10.米采血屋</option>';    s+='<option  value="2014HHLRxXFdhy"    >8米采血车</option>';
+            $('#productId').html(s);
+        }
+        initProductSelect();
+    </script>
+    <div class="clear"></div>
+
+</div><!--wrap-->
+<div class="botm">
+    <div class="wrap">
+        <dl>
+            <dt>宇通医疗车</dt>
+            <dd><a href="/?c=770"  >体检系列</a></dd>
+            <dd><a href="/?c=771"  >采送血系列</a></dd>
+            <dd><a href="/?c=772"  >急救系列</a></dd>
+            <dd><a href="/?c=1718"  >专科医疗车</a></dd>
+            <dd><a href="/?c=800"  >福祉车</a></dd>
+
+        </dl>
+
+        <dl style="width:270px;">
+            <dt>产品优势</dt>
+            <dd><a  href='/cpys/#a1'>国内率先生产医疗车的厂家</a></dd>	 <dd><a  href='/cpys/#a2'>国内领先的医疗车生产线</a></dd>	 <dd><a  href='/cpys/#a3'>行业领先的研发制造能力</a></dd>	 <dd><a  href='/cpys/#a4'>强大完善的售后服务网络</a></dd>
+        </dl>
+
+        <dl>
+            <dt>售后服务</dt>
+            <dd><a href="/shfw/fwcn/">服务承诺</a></dd> <dd><a href="/shfw/fwxm/">服务项目</a></dd> <dd><a href="http://www.yutongzyc.com/service/fwwd/">服务网点</a></dd> <dd><a href="/shfw/khly/">客户留言</a></dd>
+
+        </dl>
+        <dl>
+            <dt>购买流程</dt>
+            <dd><a href="/gmlc/?gmlc">购买流程</a></dd>
+            <dd><a href="/gmlc/?money">按揭购车</a></dd>
+        </dl>
+        <dl style="width:120px;">
+            <dt>关于我们</dt>
+            <dd><a href="/lxwm/?contact">宇通专用车概况</a></dd>
+            <dd><a href="/lxwm/?contact">联系我们</a></dd>
+            <dd><a href="/lxwm/?ly">在线留言</a></dd>
+        </dl>
+
+        <div class="clear"></div>
+
+        <div class="botm_bor">
+            <div class="fl">
+                <div class="company">
+                    <h4>
+                        宇通集团旗下企业
+                    </h4>
+                    <div style="display: none;" class="com_list">
+                        <ul>
+                            <li>
+                                <a href="http://www.ythuanwei.com/" target="_blank">宇通环卫</a>
+                            </li>
+                            <li>
+                                <a href="http://www.molead.com/" target="_blank">精益达</a>
+                            </li>
+                            <li>
+                                <a href="http://www.ldzy.com.cn/" target="_blank">绿都置业</a>
+                            </li>
+                            <li>
+                                <a href="http://www.yutongzyc.com/" target="_blank">宇通专用车</a>
+                            </li>
+                            <li>
+                                <a href="http://www.yutongzg.com/" target="_blank">宇通重工</a>
+                            </li>
+                            <li>
+                                <a href="http://www.yutong.com/" target="_blank">宇通客车</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="fr">
+                <a href="http://www.yutongzyc.com/">宇通专用车</a> |
+                <a href="http://www.yutong.com">宇通客车</a> |
+                <a href="/lxwm/">联系我们</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- 导航 -->
+        <script type="text/javascript">
+            <!--
+            //强制改变http://swc.yutongzyc.com/shfw/khly/下的站点id为25
+            $("#order input[id=message_siteId]").val(25);
+
+            //-->
+        </script>
+
+    </div>
+</div><!--.botm-->  <div class="botm_2">
+    <div class="wrap">
+
+        <table width="980">
+            <tr>
+                <td width="553">豫ICP备05018144号-8    版权所有 © 宇通专用车   2018 <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41010402002062" target="_blank"><img style="margin-right:4px;position:relative;top:-1px;" src="http://www.internetyu.com/res/template/wy/resource/images/beian.png" alt=""/>豫公网安备 41010402002062号</a></td>
+                <td >
+
+                    <div class="foot_r">
+                        <span>分享到:</span>
+                        <!-- Baidu Button BEGIN -->
+                        <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+                            <a href="javascript:" title="分享到新浪微博" class="bds_tsina"></a>
+                            <a href="javascript:" title="分享到腾讯微博" class="bds_tqq"></a>
+                            <a href="javascript:" title="分享到豆瓣网" class="bds_douban"></a>
+                            <a href="javascript:" title="分享到人人网" class="bds_renren"></a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <script src="http://bdimg.share.baidu.com/static/js/bds_s_v2.js?cdnversion=388043" type="text/javascript" id="bdshare_js" data="type=tools&mini=1&uid=166560"></script>
+
+                </td>
+                <td width="110">
+                    <div class="tel">
+                        <a href="http://weibo.com/yutongzyc" target=_blank class="fl">官方微博</a> <a  target=_blank href="http://weibo.com/yutongzyc" class="fl"><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/wb_icon.png" height="22" width="29" class="imged"/></a><div class="clear"></div>
+                        <div class="ewm" style="display:none"><div class="ar"></div><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/ewm.jpg" height="118" width="118" /></div>
+                    </div>
+                </td>
+                <td width="80">
+                    <div class="tel fr">
+                        <a href="#" class="fl">官方微信</a> <a href="#" class="fl"><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/wx_icon.png" height="22" width="25" class="imged"/></a><div class="clear"></div>
+                        <div class="ewm"><div class="ar"></div><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/ewm.jpg" height="118" width="118" /></div>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+</div><!--.botm_2-->
+
+
+<script type="text/javascript">
+    <!--
+    var kfurl="http://qiao.baidu.com/v3/?module=default&controller=webim&action=index&siteid=5484742&lastsubid=0&from=%E6%B2%B3%E5%8D%97%E9%83%91%E5%B7%9E&bid=001bc563772fa99a47d8a442&groupid=0&groupname=%E9%BB%98%E8%AE%A4%E5%88%86%E7%BB%84&chattype=1";
+
+    //
+    var wykj_kf_obj=$("[href='http://qiao.baidu.com/?module=default&controller=webim&action=index&siteid=1664844&groupid=0&groupname=%E9%BB%98%E8%AE%A4%E5%88%86%E7%BB%84']");
+    wykj_kf_obj.attr("href",kfurl );
+    wykj_kf_obj.attr("target","_blank" );
+
+    //替换所有的客服url
+    $(".wykj_zxkf").attr("href",kfurl );
+    $(".wykj_zxkf").attr("target","_blank" );
+    //-->
+</script>
+<div id="flashtc" class="wydz_box" style="display:none;">
+    <div class="tited"><p class="fl">我要定制</p> <a href="javascript:void(0);" id="close_flash" class="fr"><img src="http://swc.yutongzyc.com/res/template/swc/resource/images/close.jpg" height="53" width="49" /></a> <div class="clear"></div></div>
+    <div class="contact_pad">
+        <div class="cont_txt2">请填写下列订单，<span>*</span> 为必填选项</div>
+        <form method="post" name="guestbookForm" id="guestbookForm">
+            <input type="hidden" name="currSiteId" id="customer_siteId_del" value="25"/>
+            <input type="hidden" name="url" id="url"/>
+            <input name="categoryName" type="hidden" value="我要定制"  >
+            <input name="来源站点" type="hidden" value=""  id="customer_sourceSite" >
+
+            <table width="910" class="cont_tab">
+
+                <tr>
+                    <td style="text-align:right;"><span class="colfcc">*</span> 客户名称：</td>
+                    <td><input  id="customer_name" name="name"  maxlength="5" type="text" /></td>
+                    <td style="text-align:right;"><span class="colfcc">*</span> 联系电话：</td>
+                    <td><input id="customer_phone" name="phone"   maxlength="25"  type="text" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">E-mail：</td>
+                    <td><input id="customer_email" name="email" maxlength="25"  type="text" /></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">选择所在省份：</td>
+                    <td colspan="3">
+                        <select id="province"  name="province" onchange="getCity('');">
+                            <option value='北京市'>北京市</option>
+                            <option value='天津市'>天津市</option>
+                            <option value='河北省'>河北省</option>
+                            <option value='山西省'>山西省</option>
+                            <option value='内蒙古自治区'>内蒙古自治区</option>
+                            <option value='辽宁省'>辽宁省</option>
+                            <option value='吉林省'>吉林省</option>
+                            <option value='黑龙江省'>黑龙江省</option>
+                            <option value='上海市'>上海市</option>
+                            <option value='江苏省'>江苏省</option>
+                            <option value='浙江省'>浙江省</option>
+                            <option value='安徽省'>安徽省</option>
+                            <option value='福建省'>福建省</option>
+                            <option value='江西省'>江西省</option>
+                            <option value='山东省'>山东省</option>
+                            <option value='河南省'>河南省</option>
+                            <option value='湖北省'>湖北省</option>
+                            <option value='湖南省'>湖南省</option>
+                            <option value='广东省'>广东省</option>
+                            <option value='广西壮族自治区'>广西壮族自治区</option>
+                            <option value='海南省'>海南省</option>
+                            <option value='重庆市'>重庆市</option>
+                            <option value='四川省'>四川省</option>
+                            <option value='贵州省'>贵州省</option>
+                            <option value='云南省'>云南省</option>
+                            <option value='西藏自治区'>西藏自治区</option>
+                            <option value='陕西省'>陕西省</option>
+                            <option value='甘肃省'>甘肃省</option>
+                            <option value='青海省'>青海省</option>
+                            <option value='宁夏回族自治区'>宁夏回族自治区</option>
+                            <option value='新疆维吾尔自治区'>新疆维吾尔自治区</option>
+                        </select>
+                        &nbsp; &nbsp;<span class="colfcc">*</span>
+                        所在城市： &nbsp;<select id="city" name="city"><option>请选择</option></select>
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td style="text-align:right;"><span class="colfcc">*</span> 需求说明：</td>
+                    <td colspan="3"><textarea  id="customer_content" name="content"   cols="" rows=""></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;"><span class="colfcc"></span> </td>
+                    <td colspan="3"><span id="customer_guesttip" style="color:red"></span></td>
+                </tr>
+                <tr>
+                    <td height="80"></td>
+                    <td colspan="3"><input  id="saveCustomerBtn" onclick="saveCustomerForm();" type="button" value="提交" class="btned" /> <input  onclick="resetCustomerForm();" type="button" value="重置" class="btned" /></td>
+                </tr>
+            </table>
+        </form>
+
+
+    </div><!------contact_pad------->
+
+</div>
+
+
+<script type="text/javascript">
+    var tip_flash = new TipBox({target:"flashtc", closeBtn:"close_flash"});
+</script>
+<script type="text/javascript" src="http://cdn.internetyu.com/js/common/area.js"></script>
+
+
+<script type="text/javascript">
+    function resetCustomerForm(){
+        $('#customer_name').val("");
+        $('#customer_phone').val("");
+        $('#customer_content').val("");
+        $('#customer_email').val("");
+        $('#customer_content').val("");
+
+
+    }
+
+
+    function saveCustomerForm(){
+        //
+        var currHref=window.location.href;
+        var siteName=currHref;
+        try{
+            if(currHref.indexOf("swc.")>=0)  siteName="宇通商务车";
+            else  if(currHref.indexOf("zsc.")>=0)  siteName="宇通展示车";
+            else  if(currHref.indexOf("ylc.")>=0)  siteName="宇通医疗车";
+            else  if(currHref.indexOf("zhc.")>=0)  siteName="宇通军警指挥车";
+            else  if(currHref.indexOf("gcc.")>=0)  siteName="宇通工程车";
+            else  if(currHref.indexOf("jlc.")>=0)  siteName="宇通教练车";
+        }catch(e){
+
+        }
+
+
+        $('#customer_sourceSite').val(siteName);
+        if(checkCustomerForm()){
+
+            $('#saveCustomerBtn').hide();
+            $("#customer_guesttip").html('<font color=green>提交中，请稍等...<font>');
+            var url = '/thtml/mutualInfo/saveMutualInfo.do';
+            jQuery.post(url,$('#guestbookForm').serialize(),function(data){
+                if(!data.done){
+                    //alert('对不起，提交留言失败!');
+                    $("#customer_guesttip").html('对不起，提交订单失败!');
+                    return ;
+                }
+                else{
+                    //alert('提交建议成功，感谢您的参与!');
+                    //$("#customer_guesttip").html('留言成功，感谢您的信任!');
+                    layer.alert('定制成功，感谢您的信任!', 9);
+                    $('#saveCustomerBtn').show();
+                    $("#customer_guesttip").html('');
+                    //removeContent();
+                    $('#customer_name').val("");
+                    $('#customer_phone').val("");
+                    $('#customer_content').val("");
+                    // window.close();
+                    return ;
+                }
+            },"json");
+        }
+    }
+    function checkCustomerForm(){
+        var obj;
+        // alert();
+        var name=$('#customer_name').val();
+        // alert(name);
+        if($.trim(name)=='' ){
+
+
+            $("#customer_guesttip").html('请输入您的姓名!');
+            $('#customer_name').focus();
+            return false;
+
+        }
+        // alert(name);
+        var phone=$('#customer_phone').val();
+        // alert(phone);
+        if($.trim(phone)=='' ){
+
+
+            $("#customer_guesttip").html('请输入您的电话!');
+            $('#customer_phone').focus();
+            return false;
+
+        }
+
+
+
+
+
+        if(!_valid.isPhone(phone)){
+
+            $("#customer_guesttip").html('请输入有效的固话或手机!');
+            $('#customer_phone').focus();
+            return false;
+        }
+
+
+
+
+        var email=$('#customer_email').val();
+        if($.trim(email)!='' ){
+            if(!_valid.isEmail(email)){
+
+                $("#customer_guesttip").html('请输入有效的email!');
+                $('#customer_email').focus();
+                return false;
+            }
+        }
+
+        /*** **/
+        checkContent();
+        $("#customer_guesttip").html('');
+        return true;
+    }
+
+    var partten = /^1[34578]\d{9}$/;
+
+
+
+
+    function checkContent(){
+        // alert();
+        var obj=document.getElementById("customer_content");
+        var otherInfo=obj.value;
+        var maxLength=500;
+        if(obj.value.length>maxLength){
+            obj.value=obj.value.substring(0,maxLength)+"...";
+        }
+    }//end of function
+</script>
+<script type="text/javascript"> $("#customer_siteId").val("32");  </script>
+
+<!----> <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F82357718f3c92af1704298bd5ae305a7' type='text/javascript'%3E%3C/script%3E"));
+</script> </body>
+</html>

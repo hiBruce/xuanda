@@ -1,0 +1,94 @@
+<!--题库引用-->
+<div class="tkyy">
+    <div class="modal_content">
+       <div v-show="showlist">
+      <div class="quote_search_wrap">
+          <div class="search_wrap fl">
+              <span>所属课程：</span>
+              <select  v-model="searchOptions.kcid">
+                  <option value="">全部</option>
+                  <option v-for="kc in kcRow" :value="kc.id" v-text="kc.name"></option>
+              </select>
+
+              <span>题目类型：</span>
+              <select name="lx" v-model="searchOptions.lx">
+                  <option value="0">全部</option>
+                  <option value="1">单选题</option>
+                  <option value="2">多选题</option>
+                  <option value="3">判断题</option>
+                  <!--<option value="4">主观题</option>-->
+              </select>
+          </div>
+          <div class="search_wrap fl">
+              <span>知识点：</span>
+              <input type="text" class="search_input e-box" v-model="searchOptions.zsd">
+              <span>题目名称：</span>
+              <input type="text" class="search_input e-box" v-model="searchOptions.mc">
+              <button class="search_btn" @click="tkTmList()">查询</button>
+              <i class="fix"></i>
+          </div>
+          <i class="fix"></i>
+      </div>
+        <div class="list_content" >
+            <ul class="content_list">
+                <li class="list_li list_title">
+                    <span class="first_span fl"><input type="checkbox" name="selAllTm" v-model="checked" @click="selAllTm()"></span>
+                    <span class="second_span fl">题目名称</span>
+                    <span class="third_span fl">类型</span>
+                    <span class="fourth_span fl">知识点</span>
+                    <i class="fix"></i>
+                </li>
+                <li class="list_li" v-for="tm in tmRow">
+                    <span class="first_span fl"><input type="checkbox" v-model="checkboxModel" :value="tm.id" name="selTm" @click="selTm(tm)"></span>
+                    <span class="second_span fl go_detail" v-html="tm.mc" @click="viewTm(tm)"></span>
+                    <span class="third_span fl" v-if="tm.lx==1">单选题</span>
+                    <span class="third_span fl" v-if="tm.lx==2">多选题</span>
+                    <span class="third_span fl" v-if="tm.lx==3">判断题</span>
+                    <span class="third_span fl " v-if="tm.lx==4">主观题</span>
+                    <span class="fourth_span fl" v-text="tm.zsd"></span>
+                    <i class="fix"></i>
+                </li>
+                <i class="fix"></i>
+            </ul>
+            <div class="selTk_page"></div>
+            <div class="btn_wrap">
+                <button class="btn cancel_btn" @click="closeModal()">取消</button>
+                <button class="btn confirm_btn" @click="saveSelTm()">确定</button>
+            </div>
+        </div>
+    </div>
+
+        <div class="list_detail_wrap" v-show="!showlist" v-cloak>
+            <ul class="list_detail">
+                <li>
+                    <span class="left">题目名称</span>
+                    <span class="right" v-html="currentTm.mc"></span>
+                </li>
+                <li>
+                    <span class="left">知识点</span>
+                    <span class="right" v-text="currentTm.zsd"></span>
+                </li>
+                <li>
+                    <span class="left">选项</span>
+                    <span class="right">
+                        <ul>
+                            <li v-for="tmxx in currentTm.tmxxs" v-html="tmxx.xx+':'+tmxx.xxnr">
+                            </li>
+                        </ul>
+                    </span>
+                </li>
+                <li>
+                    <span class="left">题目答案</span>
+                    <span class="right" v-text="currentTm.zqda"></span>
+                </li>
+                <li>
+                    <span class="left">题目解析</span>
+                    <span class="right" v-html="currentTm.bz"></span>
+                </li>
+            </ul>
+            <div class="back_wrap">
+                <button class="back" @click="hideDetail()">返回</button>
+            </div>
+        </div>
+    </div>
+</div>

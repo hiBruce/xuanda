@@ -1,0 +1,70 @@
+<div class="nav_wrap">
+    <div class="sd-wrapper">
+        <div class="search_wrap  fr">
+            <select name="" id="">
+                <option>课程</option>
+            </select>
+            <input type="text" placeholder="搜索课程">
+            <span class="search_btn">
+                  <i class="iconfont icon-sousuo1"></i>
+            </span>
+        </div>
+        <ul class=" nav">
+            <li class="fl" id="home">
+                <a href="/" >首页</a>
+            </li>
+            <li class="fl" id="courselist">
+                <a href="/courselist" >课程</a>
+            </li>
+            <li class="fl" id="activitylist">
+                <a href="/activitylist">活动</a>
+            </li>
+            <li class="fl" id="grouplist">
+                <a href="/grouplist">圈子</a>
+            </li>
+            <li class="fl" id="news">
+                <a href="/news">新闻</a>
+            </li>
+            <li class="fl" id="info">
+                <a href="/info">资讯</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    function headControl(){
+        var count = 0;
+        getStr()
+        function getActive(str) {
+            try {
+                if (str.length == 0) {
+                    document.getElementById('home').className += ' active';
+                } else {
+                    document.getElementById(str).className += ' active';
+                }
+            } catch (e) {
+                count++;
+                if (count <= 3) {
+                    setTimeout(function () {
+                        getActive(str)
+                    }, 60);
+                }
+            }
+        }
+
+        function getStr() {
+            var str = window.location.pathname;
+            if (str.length > 0) {
+                if (str.indexOf('/') == 0)
+                    str = str.substring(1);
+                var idx = str.indexOf('/');
+                if (idx >= 0) {
+                    str = str.substring(0, idx);
+                }
+                getActive(str)
+            }
+        }
+    };
+    headControl()
+
+</script>

@@ -1,0 +1,58 @@
+<div class="khbz_wrap">
+	<ul class="e-box">
+		<li class="row title">
+			<span class="col-md-2">考核项</span>
+			<span class="col-md-6">单项满分</span>
+			<span class="col-md-4">学生成绩计算说明</span>
+		</li>
+		<li class="row">
+			<span class="col-md-2">视频观看</span>
+			<span class="col-md-6">
+				<input type="text" class="e-box input_score mr10" v-model="courseKh.spbl">分
+			</span>
+			<span class="col-md-4">视频观看时长/视频总时长*单项满分</span>
+		</li>
+		<li class="row">
+			<span class="col-md-2">作业</span>
+			<span class="col-md-6">
+				<input type="text" class="e-box input_score mr10"  v-model="courseKh.zybl">分
+			</span>
+			<span class="col-md-4">学生作业得分/作业总分数*单项满分</span>
+		</li>
+		<li class="row">
+			<span class="col-md-2">练习</span>
+			<span class="col-md-6">
+				<input type="text" class="e-box input_score mr10" v-model="courseKh.lxbl">分
+			</span>
+			<span class="col-md-4">学生作业得分/作业总分数*单项满分</span>
+		</li>
+		<li class="row">
+			<span class="col-md-2">测试</span>
+			<span class="col-md-6">
+				<input type="text" class="e-box input_score mr10"   v-model="courseKh.csbl">分
+			</span>
+			<span class="col-md-4">学生测试得分/测试总分数*单项满分</span>
+		</li>
+		<!-- <li class="row">
+			<span class="col-md-2">讨论发帖</span>
+			<span class="col-md-6">
+				<input type="text" class="e-box input_score mr10">分,
+				普通帖子<input type="text" class="e-box input_score mr10">分/个，
+				精华帖子<input type="text" class="e-box input_score mr10">分/个
+			</span>
+			<span class="col-md-4">学生考试得分/考试总分数*单项满分</span>
+		</li>
+		<li class="row">
+			<span class="col-md-2">笔记</span>
+			<span class="col-md-6">
+				<input type="text" class="e-box input_score mr10">分,
+				普通笔记<input type="text" class="e-box input_score mr10">分/个，
+				精华笔记<input type="text" class="e-box input_score mr10">分/个
+			</span>
+			<span class="col-md-4">学生考试得分/考试总分数*单项满分</span>
+		</li> -->
+	</ul>
+	<div class="bottom_con">
+		<button class="btn save_btn mr20" @click="submitScale">保存</button>合计：<i class="col-red" v-text="getKczf"></i>分，课程结业成绩及格分大于等于<input type="number" class="e-box" style="width:100px;padding:0 10px;height:34px" v-model="courseKh.jgfs"> 分    
+	</div>
+</div>

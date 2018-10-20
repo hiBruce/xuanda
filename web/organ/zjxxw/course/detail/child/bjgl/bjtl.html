@@ -1,0 +1,93 @@
+<div class="nav-right nav-right-ucenter my-notes notice_content_wrap">
+    <div class="nav-right-content discuss_list_content">
+        <div class="class_common_header" style="border-bottom:0;">
+            <div class="btn-group common_select" style="line-height:36px;">
+                <span>所在班级：{% bj.bjmc %}</span>
+            </div>
+            <button class="btn search_btn" @click="showModal()">创建讨论</button>
+        </div>
+        <div class="discuss_list_wrap">
+            <div class="title" v-if="tlqList.length>0" v-cloak>
+                <span class="fl" v-text="'共'+ tlsl +'条记录'"></span>
+                <div class="header-right fr" v-cloak>
+                    <ul class="sort noSelect">
+                        <!--<li>排序:</li>-->
+                        <li>
+                    <span class="sortitemicon" @click="ChangeOrder('t.cjsj')">
+                        创建时间
+                        <i class="iconfont" :class="{selected:orderBy=='t.cjsj'}"
+                           v-if="orderByDirection == 'asc' && orderBy=='t.cjsj'">&#xe73f;</i>
+                        <i class="iconfont" :class="{selected:orderBy=='t.cjsj'}"
+                           v-else-if="orderByDirection == 'asc' && orderByDirection == 'desc'">&#xea79;</i>
+                        <i class="iconfont" :class="{selected:orderBy=='t.cjsj'}" v-else>&#xea79;</i>
+                    </span>
+                        </li>
+                        <li>
+                    <span class="sortitemicon" @click="ChangeOrder('t.pls')">
+                    评论数
+                    <i class="iconfont" :class="{selected:orderBy=='t.pls'}"
+                       v-if="orderByDirection == 'asc' && orderBy=='t.pls'">&#xe73f;</i>
+                    <i class="iconfont" :class="{selected:orderBy=='t.pls'}"
+                       v-else-if="orderByDirection == 'asc' && orderByDirection == 'desc'">&#xea79;</i>
+                         <i class="iconfont" :class="{selected:orderBy=='t.pls'}" v-else>&#xea79;</i>
+
+                </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="has_comment_list discuss_list" v-if="tlqList.length>0" v-cloak>
+                <li class="comment_li" v-for="src in tlqList">
+                    <div class="fl avatar_wrap">
+                        <img :src="src.txUrl" alt="">
+                    </div>
+                    <div class="comment_list_content">
+                        <h4>
+                            <span class="name" v-text="src.username"></span>
+                            <span class="time">{% src.cjsj | dateMinute %}</span>
+                        </h4>
+                        <p class="text" v-text="src.nr"></p>
+                        <div class="operater_btn">
+                                    <span class="comment_btn " style="cursor:pointer">
+                                        <i class="iconfont">&#xe6e0;</i>
+                                        <span @click="eidtPl(src.id)">评论（<i v-text="src.pls"></i>）</span>
+                                        <span v-if="src.isOwner == 1" @click="sctl(src)">删除</span>
+                                    </span>
+                        </div>
+                        <div class="reply_wrap">
+                            <div class="reply_area" :id="src.id" style="display: none;cursor: pointer">
+                                <textarea name="" id="" v-model="tlHf" placeholder="请输入评论内容"
+                                          v-lano-limit="{text:'tlHf',maxLen:500}"
+                                ></textarea>
+                                <button class="fr btn" @click="submitTlHf(src)">评论</button>
+                                <i class="fix"></i>
+                            </div>
+                            <ul class="reply_comment_list mt20">
+                                <li class="reply_li" v-for="src2 in src.childrenList">
+                                    <div class="fl avatar_wrap">
+                                        <img :src="src2.txUrl" alt="">
+                                    </div>
+                                    <div class="comment_list_content">
+                                        <h4>
+                                            <span class="name" v-text="src2.username"></span>
+                                            <span class="time">{% src2.cjsj | dateMinute %}</span>
+                                            <span v-if="src2.isOwner == 1" @click="sctl(src2)">删除</span>
+                                        </h4>
+                                        <p class="text" v-text="src2.nr"></p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul v-else>
+                <div class="nodata-warp">
+                    <p>暂无数据</p>
+                </div>
+            </ul>
+        </div>
+        <div class="hot-group-page"></div>
+    </div>
+</div>

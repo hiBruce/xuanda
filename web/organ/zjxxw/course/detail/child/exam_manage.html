@@ -1,0 +1,49 @@
+<div class="exam_paper_wrap">
+    <div class="ep_header">
+        <div class="input_wrap">
+            <input type="text" placeholder="请输入试卷名称" v-model="searchOptions.mc">
+            <i class="iconfont">&#xe600;</i>
+        </div>
+    <!--    <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                请选择所属课程 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">视频</a></li>
+                <li><a href="#">文本</a></li>
+            </ul>
+        </div>-->
+        <button class="btn search_btn" @click="examList()">查询</button>
+        <button class="fr btn add_btn" @click="addSj()">新增试卷</button>
+        <!--<button class="fr btn add_btn" @click="showModal('auto_assembly_paper')">智能组卷</button>-->
+
+        <i class="fix"></i>
+    </div>
+    <ul class="ep_list">
+        <li class="ep_li title row">
+            <span class="col-lg-3 ">测试名称</span>
+            <span class="col-lg-3 ">创建时间</span>
+            <span class="col-lg-1 ">试题数</span>
+            <span class="col-lg-2 ">试卷总分</span>
+            <span class="col-lg-3 ">操作</span>
+        </li>
+        <li class="ep_li row" v-for="sj in sjRow">
+            <span class="col-lg-3 "><i class="limittext" v-html="sj.mc"></i></span>
+            <span class="col-lg-3 ">{% sj.cjsj| dateMinute %}</span>
+            <span class="col-lg-1 " v-text="sj.tmnum"></span>
+            <span class="col-lg-2 " v-text="sj.zfz"></span>
+            <span class="col-lg-3 ">
+                <button  @click="editSj(sj)" class="btn exam_btn">编辑</button>
+                <button @click="deleteSj(sj)"  class="btn exam_btn">删除</button>
+                <button @click="zujuan(sj)"  class="btn exam_btn">组卷</button>
+            </span>
+        </li>
+    </ul>
+    <div class="exam_page"></div>
+    <!--编辑考试-->
+    <!--<link rel="import" href="/web/v/ucenter/build_course/edit_course/modal/modal_edit_ep.html?__inline"/>-->
+    <!--&lt;!&ndash;组卷&ndash;&gt;-->
+    <!--<link rel="import" href="/web/v/ucenter/build_course/edit_course/modal/modal_assembly_paper.html?__inline"/>-->
+    <!--&lt;!&ndash;智能组卷&ndash;&gt;-->
+    <!--<link rel="import" href="/web/v/ucenter/build_course/edit_course/modal/modal_auto_assembly_paper.html?__inline"/>-->
+</div>

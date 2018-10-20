@@ -1,0 +1,13 @@
+{{#each data}}
+<ul>
+    <h3>{{name}}</h3>
+    {{#getData (getUrl id '{"name":"ddxt2_index_course_tem","params":{"pageSize":4,"pageNo":1} ,"method":"get","url":"/jxxt/api/admin/course/category/"}') }}
+      1111111
+       {{#each data}}
+        <li>
+            123
+        </li>
+        {{/each}}
+    {{/getData}}
+</ul>
+{{/each}}

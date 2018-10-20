@@ -1,0 +1,45 @@
+<div class="source_wrap">
+    <ul class="source_list" v-if="courseList.length>0">
+        <li class="title row">
+            <span class="col-md-1 ">
+                排序
+            </span>
+            <span class="col-md-4 ">
+                资料名称
+            </span>
+            <span class="col-md-3 ">
+                上传时间
+            </span>
+            <span class="col-md-2 ">
+                下载次数
+            </span>
+            <span class="col-md-2 ">
+                操作
+            </span>
+        </li>
+        <li class="source_li row" v-for="(course,ind) in courseList">
+            <span class="col-md-1 " v-text="((num - 1) * 10) + ind + 1">
+            </span>
+            <span class="col-md-4 ">
+                <span class="limittext " style="display:block" >
+                    <i class="iconfont" :class="course.typeIndefier == null ? 'file-type-unknown' : course.typeIndefier" :title="course.typeIndefier == null ? '未知类型' : course.typeIndefier" :alt="course.typeIndefier == null ? '未知类型' : course.typeIndefier"></i>
+                    <i v-text="course.zlmc"></i>
+                </span>
+            </span>
+            <span class="col-md-3">
+                {% course.scsj | dateMinute %}
+            </span>
+            <span class="col-md-2" v-text="course.xzcs || 0">
+            </span>
+            <span class="col-md-2">
+                <a :href="course.zlUrl" @click="updateDownNum(course)" target="_blank" :download="course.zlmc" style="color:#62CCDE">下载</a>
+            </span>
+        </li>
+    </ul>
+    <ul v-else>
+        <div class="nodata-warp">
+            <p>暂无数据</p>
+        </div>
+    </ul>
+    <div class="select_video_page"></div>
+</div>

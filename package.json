@@ -1,0 +1,56 @@
+{
+  "_from": "lano-front-platform",
+  "_id": "lano-front-platform@0.0.8",
+  "_inBundle": false,
+  "_integrity": "sha512-/n8JpqkzgPBF29MkG4U1qHVpZdhGuhp9rSB8w4dBOqYX1AWwJspV+hkDbkUicoWOhsoRgA6hrAOCcxv/T2tvuQ==",
+  "_location": "/lano-front-platform",
+  "_npmVersion": "3.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "lano-front-platform",
+    "name": "lano-front-platform",
+    "escapedName": "lano-front-platform",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://101.132.77.34:4873/lano-front-platform/-/lano-front-platform-0.0.8.tgz",
+  "_shasum": "b5ac83e31dd5f6a88c817fffc52acee462e8e1f9",
+  "_spec": "lano-front-platform",
+  "_where": "E:\\work\\thirdOrganization\\client",
+  "bundleDependencies": false,
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "bootstrap": "^3.3.6",
+    "connect-multiparty": "~2.0.0",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "^2.5.7",
+    "eventproxy": "~0.3.4 ",
+    "express": "~4.13.1",
+    "express-session": "~1.13.0",
+    "glob": "^7.1.2",
+    "morgan": "~1.6.1",
+    "q": "^1.5.1",
+    "serve-favicon": "~2.3.0",
+    "underscore": "1.8.3",
+    "underscore.deep": "0.5.1",
+    "uuid": "^3.1.0",
+    "xml-escape": "~1.1.0",
+    "connect-history-api-fallback": "^1.5.0"
+  },
+  "deprecated": false,
+  "description": "lano前端模板",
+  "devDependencies": {},
+  "name": "lano-front-platform",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "version": "0.1.6"
+}

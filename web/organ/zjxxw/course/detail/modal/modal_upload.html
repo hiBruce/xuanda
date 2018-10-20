@@ -1,0 +1,38 @@
+<!--添加文本 -->
+        <div class=" upload_wrap">
+            <div class="modal_content">
+                <div class="upload_show">
+                    <div class="img_wrap fl">
+                        <template v-if="upload_img">
+                            <img class="" :src="upload_img"/>
+                        </template>
+                    </div>
+                    <div class="fl right_content">
+                        <div class="btn upload_btn">上传封面</div>
+                        <p>
+                            作为课程的宣传图，用于课程主页的显示<br/>
+                            支持jpg、jpeg、gif、png格式<br/>
+                            宽360px*高236px，文件小于2MB<br/>
+                            您可以自己上传图片，也可以从下面这些图片中选择使用
+                        </p>
+                    </div>
+                    <i class="fix"></i>
+                </div>
+                <div class="recommonend_wrap">
+                    <h4>系统提供封面</h4>
+                    <ul class="img_list">
+                        <li class="img_li" @click="selectImg($event)">
+                            <img src="/static/images/63829173.png" alt="">
+                            <span class="select_span">
+                                <i class="iconfont">&#xe6e5;</i>
+                            </span>
+                        </li>
+                        <i class="fix"></i>
+                    </ul>
+                </div>
+                <div class="btn_wrap">
+                    <button class="btn cancel_btn" @click="closeModal">取消</button>
+                    <button class="btn save_btn" @click="saveImg">保存</button>
+                </div>
+            </div>
+        </div>

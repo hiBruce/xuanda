@@ -1,0 +1,68 @@
+<div class="modal_content scale_wrap">
+    <div class="summary">
+        <span>
+            总分:<input type="number" v-model="courseKh.kczf">分
+        </span>
+        <span>
+           课程结业成绩及格分大于等于 <input type="number" v-model="courseKh.jgfs">分
+        </span>
+    </div>
+    <ul class="content_list">
+        <li class="scale_title">
+            <span class="left">考核项</span>
+            <span class="right">所占比例</span>
+            <i class="fix"></i>
+        </li>
+        <li>
+            <span class="left">视频</span>
+            <span class="right">
+                            <input type="number" v-model="courseKh.spbl">%
+                        </span>
+            <i class="fix"></i>
+        </li>
+        <li>
+            <span class="left">练习</span>
+            <span class="right">
+                            <input type="number" v-model="courseKh.lxbl">%
+                        </span>
+            <i class="fix"></i>
+        </li>
+        <li>
+            <span class="left">测试</span>
+            <span class="right">
+                            <input type="number" v-model="courseKh.csbl">%
+                        </span>
+            <i class="fix"></i>
+        </li>
+        <li>
+            <span class="left">签到</span>
+            <span class="right">
+                            <input type="number" v-model="courseKh.qdbl">%
+                        </span>
+            <i class="fix"></i>
+        </li>
+        <li>
+            <span class="left">作业</span>
+            <span class="right">
+                            <input type="number" v-model="courseKh.zybl">%
+                        </span>
+            <i class="fix"></i>
+        </li>
+        <!--<li class="discuss_scale">-->
+        <!--<span class="left">讨论</span>-->
+        <!--<span class="right">-->
+        <!--<i class="sep_right">-->
+        <!--比例 <input type="number">%-->
+        <!--</i>-->
+        <!--<i class="sep_right">-->
+        <!--贴数 <input type="number">%-->
+        <!--</i>-->
+        <!--</span>-->
+        <!--<i class="fix"></i>-->
+        <!--</li>-->
+    </ul>
+    <div class="btn_wrap">
+        <button class="btn cancel_btn" @click="closeModal()">取消</button>
+        <button class="btn confirm_btn" @click="submitScale()">确定</button>
+    </div>
+</div>

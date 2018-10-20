@@ -1,0 +1,38 @@
+<div class="nav-right my-homework fr e-box">
+            <div class="ep_header row" v-cloak>
+                <div class="input_wrap">
+                    <div class="fl" style="width:150px">
+                        <input type="text" placeholder="请输入练习名称"  @input="checkInput"  v-model="searchOptions.kcnrmc">
+                        <!--<i class="iconfont" @click="getcjList()">&#xe600;</i>-->
+                    </div>
+                </div>
+                <button class="btn search_btn" @click="getcjList()">查询</button>
+                <i class="fix"></i>
+            </div>
+            <div class="nav-right-content">
+                <table class="tb1" v-if="cjList.length>0" >
+                    <thead>
+                    <tr>
+                        <th>练习名称</th>
+                        <th>提交时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="cj in cjList" v-cloak>
+                        <td v-text="cj.kcnrmc"></td>
+                        <td>{%cj.jjsj  | date %}</td>
+                        <td>
+                            <button class="btn edit_btn_sty" @click="chakan(cj)">查看</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div v-else v-cloak>
+                    <div class="nodata-warp">
+                        <p>暂无数据</p>
+                    </div>
+                </div>
+                <div class="cj-page"></div>
+            </div>
+        </div>

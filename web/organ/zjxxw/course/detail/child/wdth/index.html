@@ -1,0 +1,42 @@
+<!-- 课程笔记 -->
+<div class="th_wrap teacher_th">
+    <div class="tab_list">
+        <span class="tap_btn fl" @click="changeTab(1)" :class="{'active':showTab ==1}">我的体会</span>
+        <span class="tap_btn fl" @click="changeTab(2)" :class="{'active':showTab ==2}">班级体会</span>
+        <span class="tap_btn fl" @click="changeTab(3)" :class="{'active':showTab ==3}">课程体会</span>
+        <button class="btn common_btn fr" style="background: #df736c;" @click="showTextArea">新建体会</button>
+        <i class="fix"></i>
+    </div>
+    <div class="add_th kcpj mt10" v-if="showText" >
+        <div class="userText" >
+            <textarea placeholder="请输入体会" name="cnr" id="cnr"
+                      v-lano-limit="{text:'th.cnr',noPaste:true, maxLen:500,showNumId:'showLen'}"
+                      v-model="th.cnr"></textarea>
+            <p class="showTextlen"><i id="showLen">0</i>/500</p>
+        </div>
+        <button class="fr" @click="createTh()">提交</button>
+        <i class="fix"></i>
+    </div>
+    <ul class="th_content mt20" v-if="thList.length > 0">
+        <li v-for="item in thList">
+            <h4>
+                <img class="fl avatar" :src="item.authorPortrait||'/static/images/default_avator.png'" alt="">
+                <span class="name" v-text="item.authorName"></span>
+                <span class="time">{% item.dcjsj | dateTime %}</span>
+             </h4>
+            <div class="content" v-text="item.cnr">
+            </div>
+            <div class="th_btn_wrap" v-if="showTab==1">
+                <button class="btn edit_btn" @click="editTh(item)">编辑</button>
+                <button class="btn del_btn" @click="deletTh(item)">删除</button>
+            </div>
+            <i class="fix"></i>
+        </li>
+    </ul>
+    <ul v-else v-cloak>
+        <div class="nodata-warp">
+            <p>暂无数据</p>
+        </div>
+    </ul>
+    <div class="page-info"></div>
+</div>

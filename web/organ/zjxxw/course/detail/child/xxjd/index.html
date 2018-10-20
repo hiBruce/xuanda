@@ -1,0 +1,176 @@
+<div class="xxjd_wrap" style="padding-bottom:20px;" v-if="course.id">
+    <!--<img src="/static/images/xxjd.png" alt="" style="display:block;margin:0 auto;">-->
+    <h3 class="title ">
+        <p class="progresser">
+            上次学习：
+            <template v-if="!isFirst">
+                <a :href="'/ucenter/course/learning/'+course.id+'?chapterId='+learningStatus.xxzks.id"
+                   v-text="learningStatus.xxzks.contentName"></a>
+                <a :href="'/ucenter/course/learning/'+course.id+'?chapterId='+learningStatus.xxzks.id" class="btn ml10">继续学习</a>
+            </template>
+            <template v-else>
+                暂未学习本课程
+                <a :href="'/ucenter/course/learning/'+course.id+'?chapterId='+learningStatus.xxzks.id" class="btn ml10">开始学习</a>
+            </template>
+        </p>
+    </h3>
+    <div class="part khbz" v-if="course && course.kcKh">
+        <h4>
+            考核比例 <span class="">总分<i style="color:#e55c6f;" v-text="(course.kcKh.kczf || 0)"></i>分，课程通过条件：成绩大于等于总分的 <i
+                style="color:#e55c6f;" v-text="(course.kcKh.jgfs || 0) + '%'"></i></span>
+        </h4>
+        <ul class="khbz_list">
+            <li>
+                视频观看：<i class="color-sp" v-text="(course.kcKh.spbl||0)+'%'"></i>
+            </li>
+            <li>
+                作业：<i class="color-zy" v-text="(course.kcKh.zybl || 0)+'%'"></i>
+            </li>
+            <li>
+                练习：<i class="color-lx" v-text="(course.kcKh.lxbl || 0)+'%'"></i>
+            </li>
+            <li>
+                测试：<i class="color-cs" v-text="(course.kcKh.csbl || 0)+'%'"></i>
+            </li>
+            <li>
+                文本：<i class="color-wb" v-text="(course.kcKh.wbbl ||0)+'%'"></i>
+            </li>
+            <li>
+                教学互动：<i class="color-hd" v-text="(course.kcKh.tlbl||0)+'%'"></i>
+            </li>
+            <i class="fix"></i>
+        </ul>
+    </div>
+    <div class="part  bor-top">
+        <!--<h4>学习进度</h4>-->
+        <div class="chart_wrap e-box ">
+            <div class="left_chart fl">
+                <div class="progress_wrap ">
+                    <div id="chart"></div>
+                    <div class=" right mt20">
+                        <p>我的进度</p>
+                        <!--<p class="progresser">-->
+                        <!--上次学习：-->
+                        <!--<template v-if="learningStatus.xxzks">-->
+                        <!--<a :href="'/ucenter/course/learning/'+course.id+'?chapterId='+learningStatus.xxzks.id" v-text="learningStatus.xxzks.contentName"></a>-->
+                        <!--</template>-->
+                        <!--<template v-else>-->
+                        <!--暂未学习本课程-->
+                        <!--</template>-->
+                        <!--</p>-->
+                        <!--<a v-if="learningStatus.xxzks" :href="'/ucenter/course/learning/'+course.id+'?chapterId='+learningStatus.xxzks.id" class="btn">继续学习</a>-->
+                    </div>
+                    <i class="fix"></i>
+                </div>
+            </div>
+            <div class="right_chart">
+                <h4>我的成绩</h4>
+                <div class="cj_progeress">
+                    <div class="left fl">
+                        <div id="cj_chart"></div>
+                    </div>
+                    <div class=" right fl">
+                        <div class="row">
+						<span class="col-md-6">
+							<i class="circle sp_circle"></i>
+							视频 <span class="grey_color"><i class="srcore" v-text="progress.spFs"></i>分</span>
+						</span>
+                            <span class="col-md-6">
+							<i class="circle zy_circle"></i>
+							作业 <span class="grey_color"><i class="srcore" v-text="progress.zyFs"></i>分</span>
+						</span>
+                        </div>
+                        <div class="row">
+							<span class="col-md-6">
+								<i class="circle ks_circle"></i>
+								测试 <span class="grey_color"><i class="srcore" v-text="progress.ksFs"></i>分</span>
+							</span>
+                            <span class="col-md-6">
+								<i class="circle lx_circle"></i>
+								练习 <span class="grey_color"><i class="srcore" v-text="progress.lxFs"></i>分</span>
+							</span>
+                        </div>
+                        <div class="row">
+							<span class="col-md-6">
+								<i class="circle wb_circle"></i>
+								文本 <span class="grey_color"><i class="srcore" v-text="progress.wbFs"></i>分</span>
+							</span>
+                            <span class="col-md-6">
+								<i class="circle hd_circle"></i>
+								互动 <span class="grey_color"><i class="srcore" v-text="progress.tlFs"></i>分</span>
+							</span>
+                        </div>
+                        <div class="tips">
+                            各项成绩分数为教师上次统计成绩分数，最终成绩以最终统计结果为准。
+                        </div>
+                    </div>
+                    <i class="fix"></i>
+                </div>
+            </div>
+            <i class="fix"></i>
+        </div>
+    </div>
+    <div class="part mt10">
+        <h4 style="color:#333">学习统计</h4>
+        <div class="xx_record e-box">
+            <!--<h4>学习记录</h4>-->
+            <div class="row">
+				<span class="col-md-6">
+					<label>已观看视频</label>
+					<span class="ml20" v-text="progress.ygkSpsc"></span>
+				</span>
+                <span class="col-md-6">
+					<label>已提交测试</label>
+					<div class=" outline-progress-wrap">
+						<div class="outline-progress"
+                             :style="'width:'+progress.ksJd+'%'"></div>
+					</div>
+					<span class="col-blue">{%progress.ksJd%}%</span>
+				</span>
+            </div>
+            <div class="row">
+				<span class="col-md-6">
+					<label>已发表答疑</label>
+					<span class="ml20" v-text="progress.dys+'条'"></span>
+				</span>
+                <span class="col-md-6">
+					<label>已提交作业</label>
+					<div class="outline-progress-wrap">
+						<div class="outline-progress"
+                             :style="'width:'+progress.zyJd +'%'"></div>
+					</div>
+					<span class="col-blue">{%progress.zyJd%}%</span>
+				</span>
+            </div>
+            <div class="row">
+				<span class="col-md-6">
+					<label>已记录笔记</label>
+					<span class="ml20" v-text="progress.bjs+'条'"></span>
+				</span>
+                <span class="col-md-6">
+					<label>已提交练习</label>
+					<div class=" outline-progress-wrap">
+						<div class="outline-progress"
+                             :style="'width:'+progress.lxJd +'%'"></div>
+					</div>
+					<span class="col-blue">{%progress.lxJd%}%</span>
+				</span>
+            </div>
+            <div class="row">
+				<span class="col-md-6">
+                    <label>已参与讨论</label>
+					<span class="ml20" v-text="progress.tlTs+'条'"></span>
+				</span>
+                <span class="col-md-6">
+					<label>已确认文本</label>
+					<div class=" outline-progress-wrap">
+						<div class="outline-progress"
+                             :style="'width:'+progress.wbJd +'%'"></div>
+					</div>
+					<span class="col-blue">{%progress.wbJd%}%</span>
+				</span>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<!-- student_statistic.html -->
+<div class="nav-right-content stu_pro_content">
+		<div class="class_common_header">
+			<div class="input_wrap fl">
+				<input type="text" placeholder="请输入学员姓名" v-model="xyMc">
+				<i class="iconfont" @click="getXyKcList()">&#xe600;</i>
+			</div>
+			<!-- <div class="btn-group common_select">
+				<select class="common_select fl" v-model="bjId" @change="getXyKcList()">
+					<option value="">全部班级</option>
+					<option v-for="bj in bjList" :value="bj.id" v-text="bj.mc"></option>
+				</select>
+			</div> -->
+			<!-- <div class="btn-group common_select">
+				<select class="common_select fl" v-model="kcId" @change="getXyKcList()">
+					<option value="">全部课程</option>
+					<option v-for="kc in kcList" :value="kc.id" v-text="kc.name"></option>
+				</select>
+			</div> -->
+			<!-- <button class="btn search_btn" @click="restSearch()">重置查询</button> -->
+			<button class="btn search_btn" @click="restStatistics()">查询</button>
+		</div>
+		<p class="tips">学员课程的学习进度，分为视频观看进度、作业完成进度和测试完成进度，百分比展示，总进度为前三项进度平均值</p>
+		<ul class="pro_list" v-if="xyKcList.length>0">
+			<li class="pro_li title row">
+				<span class="col-lg-2">学员姓名</span>
+				<span class="col-lg-2">班级</span>
+				<span class="col-lg-3">课程</span>
+				<span class="col-lg-1">视频</span>
+				<span class="col-lg-1">作业</span>
+				<span class="col-lg-1">测试</span>
+				<span class="col-lg-1">总进度</span>
+			</li>
+			<li class="pro_li row" v-for="src in xyKcList" >
+				<span class="col-lg-2" v-text="src.xyMc"></span>
+				<span class="col-lg-2" v-text="src.bjMc"></span>
+				<span class="col-lg-3" v-text="src.kcMc"></span>
+				<span class="col-lg-1" v-text="src.spJd==null?'无视频':src.spJd+'%'"></span>
+				<span class="col-lg-1" v-text="src.zyJd==null?'无作业':src.zyJd+'%'"></span>
+				<span class="col-lg-1" v-text="src.ksJd==null?'无测试':src.ksJd+'%'"></span>
+				<span class="col-lg-1" v-text="src.jd==null?'--':src.jd+'%'"></span>
+			</li>
+		</ul>
+		<ul v-else>
+           <div class="nodata-warp">
+                <p>暂无数据</p>
+            </div>
+         </ul>
+		
+		<div class="paggsplit-1"></div>
+	</div>

@@ -1,0 +1,102 @@
+<div class="header-1 head">
+    <div class="b-md-wrapper">
+        <div class="top-fix-bar-wrapper">
+            <div class="sd-wrapper top-fix-bar">
+                <div class="fl">欢迎来到{{organInfo.dwMc}}</div>
+                <div class="fr">
+                    {{#if _user_}}
+                    {{#if _user_.nickName}}
+                    <span>{{_user_.nickName}}</span>
+                    {{else}}
+                    {{#if _user_.name}}
+                    <span>{{_user_.name}}</span>
+                    {{else}}
+                    <span>{{_user_.phone}}</span>
+                    {{/if}}
+                    {{/if}}
+                    | <a href="/logout">退出</a>
+                    {{else}}
+                    <div class="scrolltitle-warp">
+                        <span class="scroll-title">getPermission</span>
+                        <span class="scroll-title">浙江终身教育公共服务平台</span>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="fix"></div>
+        <div class="sd-wrapper b-md">
+            <a href="/"><img class="logo" src="{{organInfo.logoUrl}}" alt=""></a>
+            <div class="">
+                <ul class="right-bar">
+                    {{#if _user_}}
+                    <li class="dropdown" id="accountmenu">
+                        <div class="icon-avator change-role-wrap">
+                            <img src="/static/images/default_avator.png">
+                        {{#checkCanChange _roleList_}}
+                        <ul class="child_list">
+                            <i class="trigangle"></i>
+                            {{#checkRole _roleList_ 'glyqx' _changeRole_}}
+                            <li><a href="/ucenter/changeRole/glyqx">切换至管理员身份</a></li>
+                            {{/checkRole}}
+                            {{#checkRole _roleList_ 'jsqx' _changeRole_}}
+                            <li><a href="/ucenter/changeRole/jsqx">切换至教师身份</a></li>
+                            {{/checkRole}}
+                            {{#eq 'xsqx' _changeRole_}}
+                            {{else}}
+                            <li><a href="/ucenter/changeRole/xsqx">切换至学生身份</a></li>
+                            {{/eq}}
+                        </ul>
+                        {{/checkCanChange}}
+                        </div>
+                        <!--<span><a href="/teacher/my_course" class="text">教师中心</a> |</span>-->
+                        <!--<span><a href="/ucenter" class="text">学习空间</a> |</span>-->
+                        <!--<span><a href="/admin" class="text">管理中心</a> |</span>-->
+                        <!--&lt;!&ndash;<span><a href="/ucenter" class="text">个人中心</a></span>&ndash;&gt;-->
+
+                        {{#changeRole _roleList_ 'jsqx' _changeRole_}}
+                        <a href="/ucenter" class="sel_title ">教师空间</a>
+                        {{/changeRole}}
+                        {{#changeRole _roleList_ 'xsqx' _changeRole_}}
+                        <a href="/ucenter" class="sel_title">学习空间</a>
+                        {{/changeRole}}
+                        {{#changeRole _roleList_ 'glyqx' _changeRole_}}
+                        <a href="/ucenter" class="sel_title">管理空间</a>
+                        {{/changeRole}}
+
+
+
+
+
+                    </li>
+                    <!--<li class="text">
+                        <i class="name">
+                            {{_user_.name}}
+                        </i>
+                    </li>
+                    <li class="text">
+                        <i>
+                            消息
+                        </i>
+                    </li>
+                    <li class="text">
+                        <i>
+                            我的学习
+                        </i>
+                    </li>-->
+                    {{else}}
+                    <li>
+                        <a class="icon-avator" href="#"><img src="/static/images/default_avator.png"></a>
+                        <a href="getLanoConf(lano-data-proxy,data-sources,centroNode,urls,0)/register"
+                           class="text">注册</a> |
+                        <a href="/login" class="text">登录</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="b-line"></div>
+</div>
+<i class="fix"></i>
+

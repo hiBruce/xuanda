@@ -1,0 +1,12 @@
+<!--<h3 class="title">新增章节 <i class="iconfont fr" @click="closeModal()">&#xe643;</i></h3>-->
+<div class="modal_content add_chapter_modal">
+    <div class="chapter_name">
+        <span>章节名称：</span>
+        <input type="text" class="chapter_name_input" placeholder="请输入章节名称" v-model="options.thisChapter.name">
+    </div>
+    <div class="select_video_page"></div>
+    <div class="btn_wrap">
+        <button class="btn cancel_btn" @click="closeModal()">取消</button>
+        <button class="btn confirm_btn" @click="submitChapter()">确定</button>
+    </div>
+</div>

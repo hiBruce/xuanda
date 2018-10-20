@@ -1,0 +1,51 @@
+<div class="part_answer">
+    <div class="sel_wrap">
+        <select name="" id="" v-model="zjId" @change="pickZj" style="background:#fff">
+            <option value="" >--全部课时--</option>
+            <option v-for="zj in zjList" :value="zj.id" v-text="zj.name?zj.name:zj.contentName"></option>
+        </select>
+        <button class="fr create_new" @click="createAns">
+            <i class="iconfont">&#xe683;</i>创建答疑
+        </button>
+        <i class="fix"></i>
+    </div>
+    <ul class="question_list" v-for="first in dyList">
+        <li class="question_li">
+            <div class="fl img_wrap">
+                <img :src="first.txurl" alt="" class="avatar">
+            </div>
+            <div class="fl content_wrap">
+                <h4>
+                    <span class="name" v-text="first.xymc"></span>
+                    <span class="time" v-text="first.cjsj"></span>
+
+                    <!--{{#changeRole _roleList_ 'js' _changeRole_}}
+                    <button v-if="first.hfzt==0" class="reply" @click="showModal(first)">回复</button>
+                    {{/changeRole}}-->
+                </h4>
+                <p class="text" v-html="first.mc"></p>
+                <span class="right_text" v-text="first.kcmc+'-'+first.ksmc"></span>
+            </div>
+            <i class="fix"></i>
+            <ul class="reply_list" v-if="first.children.length>0" v-for="second in first.children">
+                <li class="reply_li">
+                    <div class="fl img_wrap">
+                        <img :src="second.txurl" alt="" class="avatar" style="">
+                    </div>
+                    <div class="fl content_wrap">
+                        <h4>
+                            <span class="name" v-text="second.hfrmc"></span>
+                            <span class="name">回复</span>
+                            <span class="name" v-text="second.bhfrmc"></span>
+                            <span class="time" v-text="second.cjsj"></span>
+                        </h4>
+                        <p class="text" v-html="second.mc"></p>
+                        <!--<button style="color: #62CCDE;font-size: 12px;background: #fff" @click="showModal(second)" v-if="second.hfzt==0">回复</button>-->
+
+                    </div>
+                    <i class="fix"></i>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

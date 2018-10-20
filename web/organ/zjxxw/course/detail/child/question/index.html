@@ -1,0 +1,70 @@
+<div class="questiontime_wrap">
+    <div class="search_wrap">
+        <div class="btn-group row" style="width:500px;">
+            <label class="fl">请选择章节：</label>
+            <span class="col-md-5  col-sm-5">
+            	<select id="ksid" name="ksid"
+                        v-model="search.ksid" @change="getCourseDyInfo(1)" class="base_select form-control">
+                <option value="">--全部章节--
+                </option>
+                <template v-if="course.templateType == 2">
+                    <option v-if="ks.type != 1" v-for="ks in rows_ks" :value="ks.id"
+                            v-html="ks.contentName"></option>
+                </template>
+                <template v-else>
+                    <option v-for="ks in rows_ks" :value="ks.id"
+                            v-html="ks.parentId == '0'?ks.name:((ks.type == 1 && ks.parentId != '0')?('&nbsp;&nbsp;&nbsp;&nbsp;'+ks.name):('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+ks.contentName))"></option>
+                </template>
+                    <!--<option v-for="item in rows_ks"-->
+                    <!--:value=item.id v-text="item.name || item.contentName">-->
+                    <!--</option>-->
+                </select>
+            </span>
+        </div>
+        <button class="fr create_new" @click="createAns">
+            <i class="iconfont">&#xe683;</i>创建答疑
+        </button>
+        <!--<button class="btn search_btn" @click="getCourseDyInfo()">查询</button>-->
+    </div>
+    <ul class="question_list" v-if="rows_dylb.length>0">
+        <li class="question_li" v-for="first in rows_dylb">
+            <div class="fl img_wrap">
+                <img :src="first.txurl || '/static/images/default_avator.png'" alt="" class="avatar">
+            </div>
+            <div class="content_wrap">
+                <h4>
+                    <span class="name" v-text="first.xymc"></span>
+                    <span class="time">{% first.cjsj | dateMinute %}</span>
+                    <button v-if="first.isQuizzer==1 && !first.children" class="reply" @click="scdy(first)">删除</button>
+                </h4>
+                <p class="text" v-html="first.mc"></p>
+                <span class="right_text" v-text="first.ksmc"></span>
+            </div>
+            <i class="fix"></i>
+            <ul class="reply_list" v-if="first.children && first.children.length>0">
+                <li class="reply_li" v-for="second in first.children">
+                    <div class="fl img_wrap">
+                        <img :src="second.txurl" alt="" class="avatar" style="">
+                    </div>
+                    <div class="content_wrap">
+                        <h4>
+                            <span class="name" v-text="second.hfrmc"></span>
+                            <span class="name" v-text="second.bhfrmc"></span>
+                            <span class="time">{% second.cjsj | dateMinute %}</span>
+                        </h4>
+                        <p class="text" v-html="second.mc"></p>
+                        <!-- <button style="color: #62CCDE;font-size: 12px;background: #fff" @click="showModal(second)" v-if="second.hfzt==0">回复</button>-->
+
+                    </div>
+                    <i class="fix"></i>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul v-else v-cloak>
+        <div class="nodata-warp">
+            <p>暂无数据</p>
+        </div>
+    </ul>
+    <div class="question_page"></div>
+</div>

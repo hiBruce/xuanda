@@ -1,0 +1,24 @@
+ <div class="nav-right-content class_statistic_wrap">
+ 	<ul class="class_list" v-if="managerClassList.length>0" v-cloak>
+ 		<li class="class_li e-box" v-for="src in managerClassList">
+ 			<h4>{%src.mc%}</h4>
+ 			<p>班级老师：<span>{%src.bjls%}</span></p>
+ 			<div class="class_num">
+ 				<div class="fl">
+ 					班级人数：<span>{%src.xys%}</span></div>
+ 					<div class="img_wrap">
+ 						<img src="/static/images/heard1.png" class="fl" alt="">
+ 						<i class="fix"></i>
+ 					</div>
+ 				</div>
+ 				<a class="btn check_btn" :href="'/ucenter/class_student?id=' + src.id">查看学员</a>
+ 			</li>
+ 		</ul>
+ 		 <ul v-else>
+           <div class="nodata-warp">
+                <p>暂无数据</p>
+            </div>
+         </ul>
+ 		<div class="hot-group-page"></div>
+ 		<!--缺分頁-->
+ 	</div>

@@ -1,0 +1,50 @@
+<div class="nav-right my-homework fr e-box">
+            <div class="ep_header row" v-cloak>
+                <div class="input_wrap">
+                    <input type="text" placeholder="请输入测试名称"  @input="checkInput"  v-model="searchOptions.kcnrmc">
+                </div>
+                <div class="btn-group">
+                    试卷状态：
+                    <select name="lx" v-model="searchOptions.zt" class="top_selecte">
+                        <option value="2">全部</option>
+                        <option value="0">待批卷</option>
+                        <option value="1">已完成</option>
+                    </select>
+                </div>
+                <button class="btn search_btn" @click="getcjList()">查询</button>
+                <i class="fix"></i>
+            </div>
+            <div class="nav-right-content">
+                <table class="tb1" v-if="cjList.length>0" >
+                    <thead>
+                    <tr>
+                        <th>测试名称</th>
+                        <th>试卷状态</th>
+                        <th>测试总分</th>
+                        <th>测试得分</th>
+                        <th>所属课程</th>
+                        <th>交卷时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="cj in cjList" v-cloak>
+                        <td v-text="cj.kcnrmc"></td>
+                        <td v-if="cj.zt == 0">待批卷</td>
+                        <td v-if="cj.zt == 1">已完成</td>
+                        <td v-text="cj.sjzf"></td>
+                        <td v-text="cj.fs"></td>
+                        <td v-text="cj.kcmc"></td>
+                        <td>{%cj.jjsj  | date %}</td>
+                        <td><button class="btn" @click="chakan(cj)" :disabled="cj.zt != 1">查看</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div v-else v-cloak>
+                    <div class="nodata-warp">
+                        <p>暂无数据</p>
+                    </div>
+                </div>
+                <div class="cj-page"></div>
+            </div>
+        </div>

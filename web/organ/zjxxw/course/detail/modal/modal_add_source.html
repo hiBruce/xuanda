@@ -1,0 +1,24 @@
+<!--题库引用-->
+<div class="tkyy">
+    <div class="modal_content add_source">
+        <div class="chapter_name" style="padding-bottom:20px">
+            <input type="text" class="chapter_name_input fl" placeholder="请输入资源名称" v-model="source.zlmc">
+            <select name="" id="" v-model="acceptTypeStr" class="fl select_wrap">
+                <!--<option value="img">图片</option>-->
+                <!--<option value="video">视频</option>-->
+                <!--<option value="doc">文本</option>-->
+                <option v-for="soucename in sourceArr" :value="soucename.id" v-text="soucename.name"></option>
+            </select>
+            <button class="fr btn upload_source_btn" style="position:relative;overflow: hidden">上传资源</button>
+            <i class="fix"></i>
+        </div>
+        <div class="chapter_name row mb20 e-box" v-if="source.zlUrl" style="padding:10px">
+            <label class="col-md-2">资源地址：</label>
+            <div v-text="source.zlUrl" class="col-md-10"></div>
+        </div>
+        <div class="btn_wrap">
+            <button class="btn cancel_btn" @click="closeModal">取消</button>
+            <button class="btn confirm_btn" @click="saveSource">确定</button>
+        </div>
+    </div>
+</div>

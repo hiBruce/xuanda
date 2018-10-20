@@ -1,0 +1,15 @@
+<div class="part_source">
+    <ul class="source_list" v-if="kczl_List.length>0">
+        </li>
+        <li class="source_li" v-for="kczl in kczl_List">
+            <span class="text" v-text="kczl.zlmc"></span>
+            <a href="" :download="kczl.zlUrl" @click="updateDownNum(kczl)" class="down_btn fr"><i class="iconfont">&#xe623;</i>下载</a>
+            <span class="fr down_num" v-text="kczl.xzcs + '人下载'"></span>
+        </li>
+    </ul>
+    <ul v-else>
+        <div class="nodata-warp">
+            <p>暂无数据</p>
+        </div>
+    </ul>
+</div>

@@ -1,0 +1,93 @@
+<!--<h3 class="title">课程基本信息<i class="iconfont fr" @click="closeModal('assembly')">&#xe643;</i></h3>-->
+<div class="modal_content">
+    <div class="exam_paper_wrap ">
+        <div class="ep_header">
+            <div class="input_wrap fl">
+                <input type="text" placeholder="请输入题目名称" v-model="searchOptions.mc">
+                <i class="iconfont">&#xe600;</i>
+            </div>
+            <div class="chapter_name fl">
+               <div class="fl ass_paper_wrap">
+                   <span>所属课程：</span>
+                   <select  v-model="searchOptions.kcid">
+                       <option value="">全部</option>
+                       <option v-for="kc in kcRow" :value="kc.id" v-text="kc.name"></option>
+                   </select>
+               </div>
+
+               <div class="fl ass_paper_wrap">
+                   <span>题目类型：</span>
+                   <select name="lx" v-model="searchOptions.lx">
+                       <option value="0">全部</option>
+                       <option value="1">单选题</option>
+                       <option value="2">多选题</option>
+                       <option value="3">判断题</option>
+                       <!--<option value="4">主观题</option>-->
+                   </select>
+               </div>
+               <div class="fr ass_paper_wrap">
+                   <button class="btn search_btn fl" @click="sjTmList()">查询</button>
+                   <button class="btn add_btn fl" @click="setScoreBatch()">设置分值</button>
+                   <addTm :callback="childCb" :sjid="sjid" :kcid="" class=" fl add_paper_btn"></addTm>
+                   <button class="fr btn add_btn  fl" @click="quote()">题库引用</button>
+               </div>
+            </div>
+
+            <i class="fix"></i>
+        </div>
+        <ul class="ep_list">
+            <li class="ep_li title row">
+                <span class="col-md-3 ">
+                    <i class="limittext" >题目名称</i>
+                </span>
+                <span class="col-md-3">
+                    <i class="limittext">所属课程</i>
+                    </span>
+                <span class="col-md-1">
+                    <i class="limittext">试题类型</i>
+                </span>
+                <span class="col-md-1">
+                      <i class="limittext">设置分值</i>
+                </span>
+                <span class="col-md-4">操作</span>
+            </li>
+            <li class="ep_li row" v-for="sjtm in sjtmRow">
+                <span class="col-md-3" >
+                    <i class="limittext" style="display: block" v-html="sjtm.mc"></i>
+                </span>
+                <span class="col-md-3">
+                    <i class="limittext" v-text="sjtm.kcmc"></i>
+                </span>
+
+                <span class="col-md-1" v-if="sjtm.lx==1">
+                    <i class="limittext">单选题</i>
+                </span>
+                <span class="col-md-1" v-if="sjtm.lx==2">
+                    <i class="limittext">多选题</i>
+                </span>
+                <span class="col-md-1" v-if="sjtm.lx==3">
+                    <i class="limittext">判断题</i>
+                </span>
+                <span class="col-md-1" v-if="sjtm.lx==4">
+                    <i class="limittext">主观题</i>
+                </span>
+
+                <span class="col-md-1">
+                    <i class="limittext">
+                         <input type="text" class="set_scroe_input" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" :value="sjtm.tmfz"  @blur="setScore($event,sjtm)"/>
+                    </i>
+                </span>
+                <span class="col-md-4 edit_btn_wrap">
+                    <i>
+                        <editTm :callback="childCb" :tm="sjtm" class="fl"></editTm>
+                        <button @click="detailTm(sjtm)">查看</button>
+                        <button @click="removeTm(sjtm)">移除</button>
+                        <button @click="deleteTm(sjtm)">从题库中删除</button>
+                    </i>
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tm_page"></div>
+</div>

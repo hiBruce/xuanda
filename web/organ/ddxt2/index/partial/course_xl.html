@@ -1,0 +1,12 @@
+{{#each data}}
+<li class="fl">
+    <a href="/coursedetail/{{id}}">
+        <img class="couse_img" src="{{imgUrl}}" alt="">
+        <!--<p>{{{introduction}}}</p>-->
+        <div class="content">
+            <h4 class="course_title">{{name}}</h4>
+            <p class="name">主讲：{{teacherName}}</p>
+        </div>
+    </a>
+</li>
+{{/each}}

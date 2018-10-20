@@ -1,0 +1,25 @@
+{
+  "bitwise": true,     //禁用位运算符，位运算符在 JavaScript 中使用较少，经常是把 && 错输成 &
+  "curly":true,        //循环或者条件语句必须使用花括号包围
+  "eqeqeq": true,      //强制使用三等号
+  "indent":true,       //代码必须缩进
+  "latedef":"nofunc",  //变量必须先声明后使用， function声明除外
+  "undef": true,       //变量未定义报错
+  "unused": true,      //变量未使用报错
+  "strict":false,      //不开启严格模式
+  "maxdepth": 3,       //函数最大嵌套层数
+  "maxcomplexity":10,   //圈复杂度检测
+  "noempty":true,      //禁止出现空代码块
+  "maxlen": 600,       //单文件最大行数，超出请自行拆分组件
+  "debug": true,       //忽略 debugg
+  "asi": false,        //控制“缺少分号”的警告
+  "boss": true,        //禁止比较表达式的值没有达到预期警告。
+  "evil": true,        //控制 eval 使用警告
+  "lastsemic": true,   //检查一行代码最后声明后面的分号是否遗漏
+  "laxcomma": true,    //检查不安全的折行，忽略逗号在最前面的编程风格
+  "jquery": true,      //支持jquery语法
+  "node": true,        //声明是node项目
+  "futurehostile":true,//用来警告变量被定义为js未来版本中定义的标识符。
+  "esversion":6,       //支持es6语法
+  "predef": ["define","Pagination","Service","document","isNull","location","require","loading","Utils","unique","setfootDet","getSensitiveWords","isIe","removeLoad", "FormValidator","URL","Request","window","Vue","userInfo","Vuex","VueRouter","store","router"]
+}

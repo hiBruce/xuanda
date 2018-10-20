@@ -1,0 +1,31 @@
+<div class="hw_wrap e-box">
+    <div class="btn_wrap top_btn">
+        <div class="input_wrap"><input type="text" placeholder="请输入作业名称" @keydown="keyEnter($event)" id="searchName"> <i
+                class="iconfont">&#xe600;</i></div>
+
+        <button class="btn search_btn" @click="getList(1)">查询</button>
+        <button class="btn fr" @click="showEdit">新增作业</button>
+        <i class="fix"></i>
+    </div>
+    <ul>
+        <li class="row title" style="text-align: center">
+            <span class="col-lg-6">作业名称</span>
+            <!--<span class="col-lg-2">布置状态</span>-->
+            <span class="col-lg-6">操作</span>
+        </li>
+        <li class="row" v-for="zy in zyList" style="text-align: center">
+            <span class="col-lg-6" v-html="zy.mc"></span>
+            <!--<span class="col-lg-2" v-if="zy.bzzt==0" >未布置</span>-->
+            <!--<span class="col-lg-2" v-if="zy.bzzt==1" >已布置</span>-->
+            <div class="col-lg-6">
+                <span class="col-lg-4"></span>
+                <span class="col-lg-2 edit_wrap" @click="showEdit(zy)">编辑</span>
+                <!--<span class="col-lg-1 edit_wrap"  v-if="zy.bzzt==0" @click="useHomeWork(zy)">布置</span>-->
+                <span class="col-lg-2 edit_wrap" @click="deleteConfirm(zy)">删除</span>
+            </div>
+
+
+        </li>
+    </ul>
+    <div class="hwmanagement_page"></div>
+</div>

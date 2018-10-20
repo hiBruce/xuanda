@@ -1,0 +1,98 @@
+<div class="main-container addnote-warp" id="main-container">
+    <div class="mask"></div>
+    <div class="form-warp">
+        <!-- PAGE CONTENT BEGINS -->
+        <form class="form-horizontal" role="form" id="formEdit">
+            <!-- 选择课程 -->
+            <span class="close-btn" @click="closeNote">
+                <i class="iconfont">&#xe643;</i>
+            </span>
+            <div class="form-group">
+                <label class="col-xs-2 control-label no-padding-right"> <i class="col-red">*</i>所属课程</label>
+                <div class="controls col-xs-9">
+                    <span class="form-control" v-text="course.name"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label no-padding-right">
+                    <i class="col-red">*</i>所属章节
+                </label>
+                <div class="col-xs-9">
+
+                    <select class="chosen-select form-control" data-placeholder="选择一个章节" v-model="chapterInd">
+                        <option value="">选择章节</option>
+                        <template v-if="course.templateType == 2">
+                            <option v-if="ks.type != 1" v-for="(ks,ind) in myoutline" :value="ind"
+                                    v-html="ks.contentName"></option>
+                        </template>
+                        <template v-else>
+                            <option v-for="(ks,ind) in myoutline" :value="ind"
+                                    v-html="ks.parentId == '0'?ks.name:((ks.type == 1 && ks.parentId != '0')?('&nbsp;&nbsp;|-'+ks.name):('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-'+ks.contentName))"></option>
+                        </template>
+
+                        <!--<option v-for="(item,ind) in myoutline" :value="ind">{% item.name||item.contentName %}</option>-->
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label no-padding-right">  <i class="col-red">*</i>标题 </label>
+                <div class="col-xs-9">
+                    <input type="text" class="col-xs-12 form-control" placeholder="标题最大长度为20" name="CBt"
+                           v-lano-limit="{text:'noteTitle',maxLen:20}" v-model="noteTitle"
+                    />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label no-padding-right">
+                    <i class="col-red">*</i>笔记内容
+                </label>
+                <div class="col-xs-9">
+                    <div class="form-control note-warp">
+                        <textarea name="CNr" id="CNr" class="textbox"
+                                  v-lano-limit="{showNumId:'showLen2',text:'nr',maxLen:500}"
+                                  v-model="nr"
+                                  placeholder="在此输入500字以内的笔记"></textarea>
+                        <p class="showTextlen"><i id="showLen2">0</i>/500</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label no-padding-right"> </label>
+                <div class="col-xs-6">
+                    <label style="margin-right:5px;">
+                        <input id="test" name="topStatus" type="checkbox" class="ace validator required"
+                               v-model="shareStatus">
+                        <span class="lbl"> 分享此笔记(对其它学友可见)</span>
+                    </label>
+                    <!--<label>-->
+                    <!--<input name="topStatus" type="checkbox" class="ace" v-model="impStatus">-->
+                    <!--<span class="lbl"> 标记为重要笔记</span>-->
+                    <!--</label>-->
+                </div>
+            </div>
+
+            <div class="space-4"></div>
+
+            <div class="clearfix form-actions">
+                <div class="col-md-offset-3 col-md-9 col-sm-9">
+
+                    <button class="btn clear-btn" @click="clear" type="reset">
+                        <i class="ace-icon fa fa-undo bigger-110"></i>
+                        重新填写
+                    </button>
+                    <button class="btn btn-info btnSubmit" type="button" style="margin:0 20px;"
+                            @click='submit'>
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        提交
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div><!-- /.col -->
+    <div id="footer"></div>
+</div>

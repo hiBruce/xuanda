@@ -1,0 +1,41 @@
+<div class="modal_content scale_wrap">
+    <ul class="content_list">
+        <li class="scale_title">
+            <span class="left">试题类型</span>
+            <span class="right">分值</span>
+            <i class="fix"></i>
+        </li>
+        <li>
+            <span class="left">单选题</span>
+            <span class="right">
+                <input type="number" v-model="danxfz">
+            </span>
+            <i class="fix"></i>
+        </li>
+        <li>
+            <span class="left">多选题</span>
+            <span class="right">
+                <input type="number" v-model="duoxfz">
+            </span>
+            <i class="fix"></i>
+        </li>
+        <li>
+            <span class="left">判断题</span>
+            <span class="right">
+                <input type="number" v-model="pandfz">
+            </span>
+            <i class="fix"></i>
+        </li>
+        <li>
+            <span class="left">主观题</span>
+            <span class="right">
+                            <input type="number" v-model="zhugfz">
+                        </span>
+            <i class="fix"></i>
+        </li>
+    </ul>
+    <div class="btn_wrap">
+        <button class="btn cancel_btn" @click="closeModal()">取消</button>
+        <button class="btn confirm_btn" @click="saveFz()">确定</button>
+    </div>
+</div>

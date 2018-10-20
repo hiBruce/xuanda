@@ -1,0 +1,38 @@
+<div class="class_manage_wrap">
+	<!-- <div class="row man_header">
+		<span class="col-md-4 left-bar e-box mr30 ">
+			<span class="btn col-md-6 active">我的班级</span>
+			<span class="btn col-md-6 ">其他班级</span>
+		</span>
+		<button class="btn add_btn col-md-2">
+			添加班级
+		</button>
+		<span class="col-md-4 right_bar fr e-box mr20">
+			<input type="text" class="col-md-10">
+			<i class="iconfont">&#xe600;</i>
+		</span>
+	</div> -->
+	<ul class="man_list e-box" v-if="managerClassList.length">
+		<li class="row title">
+			<span class="col-md-3  col-sm-3">班级名称</span>
+			<span class="col-md-2 col-sm-2">班级老师</span>
+			<span class="col-md-2 col-sm-2">学生数</span>
+			<span class="col-md-3 col-sm-3">创建时间</span>
+			<span class="col-md-2 col-sm-2">操作</span>
+		</li>
+		<li class="row" v-for="src in managerClassList">
+			<span class="col-md-3 col-sm-3" v-text="src.mc"></span>
+			<span class="col-md-2 col-sm-2" v-text="src.bjls"></span>
+			<span class="col-md-2 col-sm-2" v-text="src.xys"></span>
+			<span class="col-md-3 col-sm-3">2018-5-22</span>
+			<span class="col-md-2 col-sm-2">
+				 <router-link :to="'/classManage/studentList?id=' + src.id">查看</router-link>
+			</span>
+		</li>
+	</ul>
+	<ul v-else>
+		<div class="nodata-warp">
+            <p>暂无数据</p>
+      </div>
+	</ul>
+</div>

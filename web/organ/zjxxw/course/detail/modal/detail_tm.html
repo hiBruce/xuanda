@@ -1,0 +1,38 @@
+<!--题库引用-->
+<div class="tkyy">
+    <div class="modal_content">
+        <div class="list_detail_wrap">
+            <ul class="list_detail">
+                <li>
+                    <span class="left">题目名称</span>
+                    <span class="right" v-html="currentTm.mc"></span>
+                </li>
+                <li>
+                    <span class="left">知识点</span>
+                    <span class="right" v-text="currentTm.zsd"></span>
+                </li>
+                <li>
+                    <span class="left">选项</span>
+                    <span class="right">
+                        <ul>
+                            <li v-for="tmxx in currentTm.tmxxs" v-html="tmxx.xx+':'+tmxx.xxnr">
+                            </li>
+                            <i class="fix"></i>
+                        </ul>
+                    </span>
+                </li>
+                <li>
+                    <span class="left">题目答案</span>
+                    <span class="right" v-text="currentTm.zqda"></span>
+                </li>
+                <li>
+                    <span class="left">题目解析</span>
+                    <span class="right" v-html="currentTm.bz"></span>
+                </li>
+            </ul>
+            <div class="back_wrap">
+                <button class="back" @click="closeModal()">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<!--添加文本 -->
+<div class="add_text">
+    <div class="modal_content">
+        <div class="chapter_name">
+            <span>章节名称：</span>
+            <input type="text" class="chapter_name_input" placeholder="请输入章节名称"
+                   v-model="options.thisChapter.contentName">
+        </div>
+        <div class="chapter_name">
+            <span>章节内容：</span>
+        </div>
+        <div id="text_container"></div>
+        <div class="btn_wrap">
+            <button class="btn cancel_btn" @click="closeModal()">取消</button>
+            <button class="btn save_btn" @click="saveEditText()">保存</button>
+        </div>
+    </div>
+</div>

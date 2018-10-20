@@ -1,0 +1,56 @@
+<div class="teaching_set_wrap">
+	<ul>
+		<li class="row">
+			<span class="col-md-2 tips">强制观看</span>
+			<span class="col-md-3">
+				<span class="animate_wrap" :class="{'has_animate':course.sfqzgk ==1}" >
+					<span class="circle_wrap">
+						强制<i class="circle"></i>
+					</span>
+					不强制
+				</span>
+			</span>
+			<span class="col-md-7 text">*学生在第一遍观看视频时，无法快进或拖动进度条</span>
+		</li>
+		<li class="row mt30">
+			<span class="col-md-2 col-sm-2 tips">移动端下载</span>
+			<span class="col-md-3 col-sm-3">
+				<span class="animate_wrap" :class="{'has_animate':course.isAppDownload ==1}" >
+					<span class="circle_wrap">
+						允许<i class="circle"></i>
+					</span>
+					不允许
+				</span>
+			</span>
+			<span class="col-md-7 col-sm-7 text">*学生可以在APP中下载视频并离线观看</span>
+		</li>
+		<li class="row mt30">
+			<span class="col-md-2 col-sm-2 tips">开放选课</span>
+			<span class="col-md-3 col-sm-3">
+				<span class="animate_wrap" :class="{'has_animate':course.type ==1}" >
+					<span class="circle_wrap">
+						开放<i class="circle"></i>
+					</span>
+					不开放
+				</span>
+			</span>
+			<span class="col-md-7 text">*开放则其他院校或者社会人员也可以选课学习</span>
+		</li>
+		<li class="row mt30">
+			<span class="col-md-2 tips">设置密码</span>
+			<span class="col-md-3">
+				<span class="animate_wrap fl" :class="{'has_animate':course.isNeedPwd ==1}">
+					<span class="circle_wrap">
+						开启<i class="circle"></i>
+					</span>
+					关闭
+				</span>
+				<span class="password_wrap ml10 fl" v-if="course.isNeedPwd ==1">
+					<input type="text" class="form-control" v-model="course.coursePwd" >
+				</span>
+			</span>
+			<span class="col-md-7 text">*开放则其他院校或者社会人员也可以选课学习</span>
+		</li>
+	</ul>
+
+</div>

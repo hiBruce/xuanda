@@ -1,0 +1,66 @@
+<div class="page-content modal_content" style="margin-top:0;">
+    <div class="row">
+        <div class="col-xs-12 create_answer">
+            <!-- PAGE CONTENT BEGINS -->
+            <form class="form-horizontal" role="form" id="formEdit">
+                <!-- 选择课程 -->
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right"> 所属课程 </label>
+                    <div class="controls col-xs-9">
+                        <input class="chosen-select form-control" :value="row.name" readonly="readonly">
+                        </input>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right"> 所属章节 </label>
+                    <div class="col-xs-9">
+
+                        <select class="chosen-select form-control" v-model="zj">
+                            <option value="">请选择章节</option>
+                            <template v-if="row.templateType == 2">
+                                <option v-if="ks.type != 1" v-for="ks in zjList" :value="ks"
+                                        v-html="ks.contentName"></option>
+                            </template>
+                            <template v-else>
+                                <option v-for="ks in zjList" :value="ks"
+                                        v-html="ks.parentId == '0'?ks.name:((ks.type == 1 && ks.parentId != '0')?('&nbsp;&nbsp;&nbsp;&nbsp;|-'+ks.name):('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-'+ks.contentName))"></option>
+                            </template>
+                            <!--<option v-for="zj in zjList" :value="zj" v-text="zj.name?zj.name:zj.contentName"></option>-->
+                        </select>
+                    </div>
+                </div>
+
+                <!--<div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right"> 标题 </label>
+                    <div class="col-xs-9">
+                        <input type="text" class="col-xs-12 e-box form-control" name="CBt" value=""/>
+                    </div>
+                </div>-->
+
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right"> 问题内容 </label>
+                    <div class="col-xs-9 userText e-box">
+                        <textarea name="CNr" id="CNr" class="textbox e-box" v-model="content"
+                                  v-lano-limit="{text:'content',showNumId:'showLen',maxLen:500}"
+                                  ></textarea>
+                        <p class="showTextlen"><i id="showLen">0</i>/500</p>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="clearfix form-actions">
+                    <div class="col-md-offset-2 col-md-9 col-sm-9">
+                        <button class="btn btn-info btnSubmit" type="button" @click="submit">
+                            <i class="ace-icon fa fa-check bigger-110 "></i>
+                            提交
+                        </button>
+                        <!-- <button class="btn" type="reset">
+                             <i class="ace-icon fa fa-undo bigger-110"></i>
+                             重新填写
+                         </button>-->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

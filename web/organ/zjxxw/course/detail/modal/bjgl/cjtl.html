@@ -1,0 +1,14 @@
+<div class="modal_content">
+    <div class="btn-group common_select">
+        所在班级：{% options.bj.bjmc %}
+    </div>
+    <div class="mt20">
+        <textarea style="height:150px;resize:none" v-model="tl.nr" class="form-control"
+                  v-lano-limit="{text:'tl.nr',maxLen:500}"
+                  placeholder="请输入讨论内容"></textarea>
+    </div>
+    <div class="btn_wrap" style="border:0;">
+        <button class="btn confirm_btn fr" @click="submitTl()">确定</button>
+        <button class="btn cancel_btn fr mr10" @click="closeModal()">取消</button>
+    </div>
+</div>

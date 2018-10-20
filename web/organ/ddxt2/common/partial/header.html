@@ -1,0 +1,79 @@
+<div class="header-1 head">
+
+    <div class="b-md-wrapper">
+        <div class="top-fix-bar-wrapper">
+            <div class="sd-wrapper top-fix-bar">
+                <div class="fl">欢迎来到{{data.dwMc}}</div>
+                <div class="fr">
+                    {{#if _user_}}
+                    {{#if _user_.nickName}}
+                    <span>{{_user_.nickName}}</span>
+                    {{else}}
+                    {{#if _user_.name}}
+                    <span>{{_user_.name}}</span>
+                    {{else}}
+                    <span>{{_user_.phone}}</span>
+                    {{/if}}
+                    {{/if}}
+                    | <a href="/logout">退出</a>
+                    {{else}}
+                    <div class="scrolltitle-warp">
+                        <span class="scroll-title">getPermission</span>
+                        <span class="scroll-title">浙江终身教育公共服务平台</span>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="fix"></div>
+        <div class="sd-wrapper b-md">
+            <a href="/"><img class="logo" src="{{data.logoUrl}}" alt=""></a>
+            <div class="">
+                <ul class="right-bar">
+                    {{#if _user_}}
+                    <li class="dropdown" id="accountmenu">
+                        <div class="icon-avator change-role-wrap">
+                            <img src="/static/images/default_avator.png">
+                            <ul class="child_list" style="display: block;">
+                                <i class="trigangle"></i>
+                                <li v-if="user.dwGly"><a href="/admin">切换至管理员身份</a></li>
+                                <li v-if="user.dwJs"><a href="/teacher">切换至教师身份</a></li>
+                                <li v-if="user.dwXs"><a href="/student">切换至学生身份</a></li>
+                            </ul>
+                        </div>
+                        <span><a href="/teacher/my_course" class="text">教师中心</a> |</span>
+                        <span><a href="/ucenter" class="text">学习空间</a> |</span>
+                        <span><a href="/admin" class="text">管理中心</a> |</span>
+                        <!--<span><a href="/ucenter" class="text">个人中心</a></span>-->
+                    </li>
+                    <!--<li class="text">
+                        <i class="name">
+                            {{_user_.name}}
+                        </i>
+                    </li>
+                    <li class="text">
+                        <i>
+                            消息
+                        </i>
+                    </li>
+                    <li class="text">
+                        <i>
+                            我的学习
+                        </i>
+                    </li>-->
+                    {{else}}
+                    <li>
+                        <a class="icon-avator" href="#"><img src="/static/images/default_avator.png"></a>
+                        <a href="getLanoConf(lano-data-proxy,data-sources,centroNode,urls,0)/register"
+                           class="text">注册</a> |
+                        <a href="/login" class="text">登录</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="b-line"></div>
+</div>
+<i class="fix"></i>
+

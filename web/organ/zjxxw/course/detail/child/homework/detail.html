@@ -1,0 +1,48 @@
+ <div class="nav-right-content homework-detail">
+ 	<p class="bread_tips">我的作业
+ 		<i class="iconfont">&#xe652;</i>
+ 		<span>作业详情</span>
+ 		<span style="float: right">
+ 			<a href="javascript:history.back(-1)" class="edit_btn_sty">返回作业列表</a>
+ 		</span>
+ 	</p>
+ 	<div class="hw-title">
+ 		<span class="col-xs-4" >
+			<b class="fl">作业名称：</b>
+			<span class="limittext fl" style="width:200px;" v-html="zyXy.zymc"></span>
+			<i class="fix"></i>
+		</span>
+ 		<span class="col-xs-4" style="overflow: hidden;height:100%">
+			<b class="fl">所属课程：</b>
+			<span class="limittext fl" style="width:200px;" v-html="zyXy.kcmc"></span>
+			<i class="fix"></i>
+		</span>
+ 		<span class="col-xs-4">
+			<b>提交日期：</b>{% zyXy.tjsj| dateMinute %}
+		</span>
+ 	</div>
+ 	<div v-for="(da,index) in detailList">
+ 		<p class="ask mt10">
+ 			<span class="tips fl mr20 fontwei6" v-text="'问题'+(index+1)+':'"></span>
+ 			<span class="text fl break_word" v-html="da.wt"></span>
+ 			<i class="fix"></i>
+ 		</p>
+ 		<p class="answer mt20">
+ 			<span class="tips fl mr20 fontwei6">回答:</span>
+ 			<span class="text fl break_word" v-html="da.da"></span>
+ 			<i class="fix"></i>
+ 		</p>
+ 		<div class="fix"></div>
+ 		<div class="line">
+ 		</div>
+ 	</div>
+ 	<div class="chapter_name" v-if="zyXy.wjlj">
+ 		<label class="">资源地址：</label>
+ 		<a style="color: blue" target="_blank" :href="zyXy.wjlj" v-text="zyXy.wjmc"></a>
+ 	</div>
+ 	<div class="hw-title hw_comment">
+ 		<b>老师点评:</b>
+ 	</div>
+ 	<div class="hw-name hw_comment_text" id="jspj"  v-html="jspj">
+ 	</div>
+ </div>

@@ -1,0 +1,25 @@
+<div class="modal_content add_class_wrap">
+    <div class="row chapter_name">
+        <span class="col-md-2">课程名称：</span>
+        <input type="text" class="chapter_name_input col-md-9" placeholder="请输入课程名称" v-model="chapter.name">
+    </div>
+    <h3 class="mt20 row">
+    	<span class="col-md-2">选择模板</span>
+    </h3>
+    <div class="row mt20">
+    	<span class="col-md-1"></span>
+    	<span class="col-md-5 " @click="selectMB($event,0)">
+    		<img src="/web/static/images/kcmb1.jpg?__inline" alt="" class="mb_img e-box">
+    	</span>
+    	
+    	<span class="col-md-1"></span>
+    	<span class="col-md-5"  @click="selectMB($event,1)">
+    		<img src="/web/static/images/kcmb2.jpg?__inline" alt="" class="mb_img e-box">
+    	</span>
+    </div>
+    <div class="select_video_page"></div>
+    <div class="btn_wrap">
+        <button class="btn cancel_btn" @click="closeModal()">取消</button>
+        <button class="btn confirm_btn" @click="submitChapter()">确定</button>
+    </div>
+</div>

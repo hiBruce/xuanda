@@ -1,0 +1,159 @@
+<div class="baseinfo_wrap">
+	<h4 class="title">课程基本信息</h4>
+	<div class="info_list content_list ">
+		<div class="row bor-bot">
+			<span class="col-md-2">
+				课程名称
+			</span>
+			<span class="col-md-5 noPad">
+				<p class="form-control clear-form-control" v-text="course.name">
+				</p>
+			</span>
+		</div>
+		<!--<div class="row bor-bot mt20">-->
+			<!--<span class="col-md-2">-->
+				<!--课程学分-->
+			<!--</span>-->
+			<!--<span class="col-md-1 noPad">-->
+				<!--<p class="form-control clear-form-control"v-text="course.credits+'分'"></p>-->
+			<!--</span>-->
+		<!--</div>-->
+		<template>
+			<div class="row bor-bot mt20" v-if="showCredits == 1">
+			<span class="col-md-2">
+				学历教育学分
+			</span>
+				<span class="col-md-2 noPad">
+				<p class="form-control clear-form-control" v-text="course.degreeCredits+'分'"></p>
+			</span>
+			</div>
+			<div class="row bor-bot mt20" v-else-if="showCredits == 2">
+			<span class="col-md-2">
+				非学历教育学分
+			</span>
+				<span class="col-md-2 noPad">
+				<p class="form-control clear-form-control" v-text="course.credits+'分'"></p>
+			</span>
+			</div>
+		</template>
+		<div class="row bor-bot mt20">
+			<span class="col-md-2">
+				课程积分
+			</span>
+			<span class="col-md-2 noPad">
+				<p class="form-control clear-form-control" v-text="course.integral+'分'"></p>
+			</span>
+		</div>
+		<div class="row bor-bot mt20">
+			<span class="col-md-2">
+				课程来源
+			</span>
+			<span class="co
+			l-md-10 noPad">
+                <span class="radio_wrap col-md-2" v-if="course.sourceType==0">
+                   本系统
+                </span>
+                <span class="radio_wrap col-md-3" v-else>
+                    第三方系统
+                </span>
+                <div class="fl half_width col-md-7" v-if="course.sourceType!=0">
+	                <div v-if="course.sourceType==1">
+	                    <label for="sourceUrl">三方链接：</label>
+	                    <input type="text" id="sourceUrl" class="sourceUrl clear-form-control"  v-model="course.sourceUrl"  readonly="true"/>
+	                </div>
+	            </div>
+			</span>
+		</div>
+		<div class="row bor-bot mt20">
+			<span class="col-md-2">
+				课程类型
+			</span>
+			<div class="col-md-10 noPad">
+             	 <span class="radio_wrap col-md-3" v-if="course.type ==1">
+						 开放课程
+             	 </span>
+				<span class="radio_wrap col-md-3" v-else-if="course.type ==2">
+             	 	 收费课程
+             	 </span>
+				<span class="radio_wrap col-md-3" v-else>
+             	 	内部课程
+             	 </span>
+			</div>
+		</div>
+		<div class="row bor-bot mt20 sf_sty" v-if="course.type==2" >
+			<span class="col-md-2">
+			</span>
+			<div class="col-md-3">
+				<label for="price">价格：</label>
+				<input type="number" id="price" class="price clear-form-control"
+					   v-model="course.price" readonly="true"/>元
+			</div>
+			<div  class="col-md-6">
+				<label class="fl">是否试看：</label>
+				<span class="radio_wrap fl mr20">
+	                <input name="sfsk" type="radio" class="fl clear-form-control" value="0"
+						   v-model="course.sfsk" readonly="true"> 可以试看
+	            </span>
+				<span class="radio_wrap fl">
+	                <input name="sfsk" type="radio" class="fl clear-form-control" value="1"
+						   v-model="course.sfsk" readonly="true"> 不可试看
+	            </span>
+			</div>
+		</div>
+		<div class="row bor-bot mt20">
+			<span class="col-md-2">
+				学习类型
+			</span>
+
+			<span class="col-md-10 noPad">
+                    <span class="radio_wrap col-md-2" v-if="course.studyStyle == 0">
+                         线上
+                    </span>
+                    <span class="radio_wrap col-md-3" v-else>
+                          线下
+                    </span>
+			</span>
+
+		</div>
+		<div class="row bor-bot mt20">
+			<span class="col-md-2">
+				课程简介
+			</span>
+			<span class="col-md-10 noPad">
+				<p class="form-control area_sty clear-form-control" v-html="course.profile">
+				</p>
+			</span>
+		</div>
+		<div class="row bor-bot mt20">
+			<span class="col-md-2">
+				课程概述
+			</span>
+			<span class="col-md-10 noPad">
+				<p class="form-control area_sty clear-form-control" v-html="course.introduction">
+
+				</p>
+			</span>
+		</div>
+		<div class="row  mt20">
+			<span class="col-md-2">
+				教师介绍
+			</span>
+			<span class="col-md-10  teacher_list_wrap">
+				<ul class="teacher_list" v-if="course.kcZjjsList && course.kcZjjsList.length>0">
+					<li v-for="(teacherInfo,ind) in course.kcZjjsList">
+						<div class="top">
+							<img :src="teacherInfo.jstx?teacherInfo.jstx:'/static/temp/首页_slices/默认头像@3x.png'" alt="" class="avatar fl">
+							<div class="info fl">
+								<p>{{teacherInfo.jsmc}} <span class="grey_text ml20" v-text="teacherInfo.zc"></span></p>
+								<p class="grey_text" v-text="teacherInfo.dw + teacherInfo.bm"></p>
+							</div>
+							<i class="fix"></i>
+						</div>
+						<div class="intro_text mt10" v-text="teacherInfo.js">
+						</div>
+					</li>
+				</ul>
+			</span>
+		</div>
+	</div>
+</div>
